@@ -1,6 +1,12 @@
-<h1 align="center">Hi, I'm Beko-S. </h1>
+<h1 align="center">Hi, I'm Beko-S.</h1>
 
 ![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Beko-S&theme=radical)
+
+
+
+<h3 align="left">Social Media:</h3>
+Discord: Beko-S#6714
+
 
 <h3 align="left">Languages and Tools:</h3>
 
