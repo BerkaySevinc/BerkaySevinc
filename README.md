@@ -15,7 +15,7 @@
   <a href="https://steamcommunity.com/id/beko-s/" target="blank">
     <b>Beko-S</b>
   </a>
-    
+  \n
   <a href="https://discord.com/users/344248803420930049" target="blank">
     <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/discord.svg" height="40" width="40">
   </a>
