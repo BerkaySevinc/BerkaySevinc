@@ -4,9 +4,9 @@
 
 
 
+<!-- Social Media -->
 <h3 align="left">Social Media:</h3>
 
-// Social Medias
 <p>
   <a href="https://steamcommunity.com/id/beko-s/" target="blank">   
     <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/steam.svg" height="40" width="40"/>
@@ -28,7 +28,8 @@
 </p>
 
 
-  
+
+<!-- Languages and Tools -->
 <h3 align="left">Languages and Tools:</h3>
 
 <p align="left">
