@@ -23,7 +23,7 @@
   </a>
   ​ ​ ​
   <a href="https://discord.com/users/344248803420930049" target="_blank">
-    <b>Beko-S#0001</b>
+    <b>Beko-S</b>
   </a>
 </p>
 
