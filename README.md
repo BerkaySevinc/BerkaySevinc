@@ -1,32 +1,33 @@
 <h1 align="center">Hi, I'm Berkay.</h1>
 
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=radical)
 
+<!-- Stats Table -->
+<table>
+  <tr>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api?username=BerkaySevinc&show_icons=true&theme=tokyonight&hide_rank=true&include_all_commits=true&hide=prs,issues,contribs"/>  
+    </td>
+    <td>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=tokyonight"/>
+    </td>
+  </tr>
+</table>
 
 
 <!-- Social Media -->
-<h3 align="left">Social Media:</h3>
-
-<p>
-  <a href="https://steamcommunity.com/id/beko-s/" target="_blank">   
-    <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/steam.svg" height="40" width="40"/>
-  </a>
-  ​ ​ ​
-  <a href="https://steamcommunity.com/id/beko-s/" target="_blank">
-    <b>Beko-S</b>
-  </a>
-</p>
+<h3 align="left">🌐 Connect with Me</h3>
   
 <p>
   <a href="https://discord.com/users/344248803420930049" target="_blank">
-    <img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/discord.svg" height="40" width="40">
-  </a>
-  ​ ​ ​
-  <a href="https://discord.com/users/344248803420930049" target="_blank">
-    <b>Beko-S</b>
+    <img align="center" src="https://img.shields.io/badge/BEKOS-BerkaySevinc?style=for-the-badge&logo=discord&logoColor=white&color=%235865F2"/>
   </a>
 </p>
 
+<p>
+  <a href="https://steamcommunity.com/id/beko-s/" target="_blank">   
+    <img align="center" src="https://img.shields.io/badge/BEKO--S-BerkaySevinc?style=for-the-badge&logo=steam&logoColor=white&color=%23171a21"/>
+  </a>
+</p>
 
 
 <!-- Languages and Tools -->
