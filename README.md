@@ -1,45 +1,39 @@
-<h1 align="center">Hi, I'm Berkay.</h1>
+<h1 align="center">Hi 👋, I'm Berkay</h1>
 
+<h3 align="center">A passionate Software Engineer from Turkey 🇹🇷</h3>
 
-<!-- Stats Table -->
-<table>
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00FF00&center=true&vCenter=true&width=435&lines=Software+Engineer;Full+Stack+Developer;Open+Source+Enthusiast;Always+Learning+New+Things" alt="Typing SVG" />
+</p>
+
+<table align="center">
   <tr>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api?username=BerkaySevinc&show_icons=true&theme=tokyonight&hide_rank=true&include_all_commits=true&hide=prs,issues,contribs"/>  
+      <img src="https://github-readme-stats.vercel.app/api?username=BerkaySevinc&show_icons=true&theme=tokyonight&hide_rank=true&include_all_commits=true&hide=prs,issues,contribs" alt="GitHub Stats" />
     </td>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=tokyonight"/>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=tokyonight&layout=compact" alt="Top Languages" />
     </td>
   </tr>
 </table>
 
+<h3 align="left">📫 Connect with Me</h3>
 
-<!-- Social Media -->
-<h3 align="left">🌐 Connect with Me</h3>
-  
-<p>
+<p align="left">
   <a href="https://discord.com/users/344248803420930049" target="_blank">
     <img align="center" src="https://img.shields.io/badge/BEKOS-BerkaySevinc?style=for-the-badge&logo=discord&logoColor=white&color=%235865F2"/>
   </a>
-</p>
-
-<p>
   <a href="https://steamcommunity.com/id/beko-s/" target="_blank">   
     <img align="center" src="https://img.shields.io/badge/BEKO--S-BerkaySevinc?style=for-the-badge&logo=steam&logoColor=white&color=%23171a21"/>
   </a>
 </p>
 
-
-<!-- Languages and Tools -->
-<h3 align="left">Languages and Tools:</h3>
+<h3 align="left">🛠️ Languages and Tools</h3>
 
 <p align="left">
-  
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" width="40" height="40"/>
-  ​ ​ ​ ​ ​ ​ ​
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" width="40" height="40"/>
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="40" height="40"/>
-  
+  <img src="https://img.shields.io/badge/C%23-%23239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
+  <img src="https://img.shields.io/badge/.NET-%235C2D91?style=for-the-badge&logo=.net&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-%23E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-%231572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
 </p>
