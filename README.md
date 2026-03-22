@@ -13,7 +13,7 @@
     </td>
     <td>
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=tokyonight&layout=compact" alt="Top Languages" />
-    </td>
+    </td> 
   </tr>
 </table>
 
