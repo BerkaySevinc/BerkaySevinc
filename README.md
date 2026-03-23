@@ -12,7 +12,7 @@
       <img src="https://github-readme-stats.vercel.app/api?username=BerkaySevinc&show_icons=true&theme=tokyonight&hide_rank=true&include_all_commits=true&hide=prs,issues,contribs" alt="GitHub Stats" />
     </td>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=tokyonight&layout=compact&v=2" alt="Top Languages" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BerkaySevinc&theme=tokyonight&layout=compact" alt="Top Languages" />
     </td>
   </tr>
 </table>
