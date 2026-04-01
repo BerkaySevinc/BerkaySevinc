@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:1e1b4b,100:4c1d95&height=240&section=header&text=Berkay%20Sevinc&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Software%20Developer%20%E2%80%94%20Building%20with%20precision&descAlignY=60&descSize=20&descColor=c4b5fd&bg_color=0d1117"/>
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,40:1e1b4b,100:4c1d95&height=240&section=header&text=Berkay%20Sevinc&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Software%20Developer%20%E2%80%94%20Building%20with%20precision&descAlignY=60&descSize=20&descColor=c4b5fd&bg_color=ffffff"/>
+</picture>
+
 <h1 align="center">Hi 👋, I'm Berkay</h1>
 
 <h3 align="center">A passionate Software Engineer from Turkey 🇹🇷</h3>
