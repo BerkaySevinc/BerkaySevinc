@@ -1,8 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="26" viewBox="0 0 220 26">
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="30" viewBox="0 0 200 30">
   <style>
-    @media (prefers-color-scheme: light) { .t { fill: #1e1b4b; } .l { fill: #4c1d95; } }
-    @media (prefers-color-scheme: dark)  { .t { fill: #ffffff; } .l { fill: #A78BFA; } }
+    @media (prefers-color-scheme: light) { .t { fill: #1e1b4b; } }
+    @media (prefers-color-scheme: dark)  { .t { fill: #ffffff; } }
   </style>
-  <text class="t" x="110" y="16" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">FRAMEWORKS &amp; RUNTIMES</text>
-  <rect class="l" x="0" y="21" width="220" height="2" rx="1"/>
+  <text class="t" x="100" y="20" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="14" font-weight="600">Frameworks &amp; Runtimes</text>
 </svg>
