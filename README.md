@@ -1,6 +1,10 @@
 <img src="header.svg" width="100%"/>
 
+<br>
+
 <img src="typing.svg" width="100%"/>
+
+<br>
 
 <div align="center">
 
