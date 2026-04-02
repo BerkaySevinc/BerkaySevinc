@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="185" height="36" viewBox="0 0 185 36">
+<svg xmlns="http://www.w3.org/2000/svg" width="185" height="44" viewBox="0 0 185 44">
   <style>
     @media (prefers-color-scheme: light) { .t { fill: #1e1b4b; } }
     @media (prefers-color-scheme: dark)  { .t { fill: #ffffff; } }
   </style>
-  <text class="t" x="92" y="23" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="600">Tools &amp; Environment</text>
+  <text class="t" x="92" y="26" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="600">Tools &amp; Environment</text>
 </svg>
