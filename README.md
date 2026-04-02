@@ -8,21 +8,27 @@
 
 <div align="center">
 
-**Languages**
+<img src="label-lang.svg"/>
+
+<br>
 
 <img src="badges-lang.svg"/>
 
 <br>
 <br>
 
-**Frameworks & Runtimes**
+<img src="label-fw.svg"/>
+
+<br>
 
 <img src="badges-fw.svg"/>
 
 <br>
 <br>
 
-**Tools & Environment**
+<img src="label-tools.svg"/>
+
+<br>
 
 <img src="badges-tools.svg"/>
 

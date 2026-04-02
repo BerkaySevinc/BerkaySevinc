@@ -81,7 +81,7 @@ V 0 H 0 Z">
     <animate attributeName="opacity"
       from="0" to="1"
       dur="1.8s"
-      begin="1.5s"
+      begin="1s"
       fill="freeze"/>
   </text>
 
@@ -101,7 +101,7 @@ V 0 H 0 Z">
     <animate attributeName="opacity"
       from="0" to="1"
       dur="1.8s"
-      begin="2s"
+      begin="1.5s"
       fill="freeze"/>
   </text>
 

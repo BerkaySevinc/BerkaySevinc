@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="238" height="28" viewBox="0 0 238 28">
+  <rect x="0" y="0" width="238" height="28" rx="4" fill="#1e1b4b"/>
+  <rect x="0" y="0" width="7"   height="28" rx="4" fill="#4c1d95"/>
+  <rect x="3" y="0" width="4"   height="28"         fill="#4c1d95"/>
+  <text x="122" y="18" text-anchor="middle" fill="#c4b5fd" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">FRAMEWORKS &amp; RUNTIMES</text>
+</svg>
