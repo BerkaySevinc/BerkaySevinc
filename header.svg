@@ -73,16 +73,10 @@ V 0 H 0 Z">
     fill="#fff"
     text-anchor="middle"
     letter-spacing="-1"
-    filter="url(#text-glow)"
-    opacity="0">
+    filter="url(#text-glow)">
 
     Berkay Sevinç
 
-    <animate attributeName="opacity"
-      from="0" to="1"
-      dur="1.8s"
-      begin="1s"
-      fill="freeze"/>
   </text>
 
   <!-- DESC -->
@@ -93,16 +87,10 @@ V 0 H 0 Z">
     fill="#e2d9f3"
     text-anchor="middle"
     letter-spacing="0.5"
-    filter="url(#text-glow)"
-    opacity="0">
+    filter="url(#text-glow)">
 
     Software Engineer
 
-    <animate attributeName="opacity"
-      from="0" to="1"
-      dur="1.8s"
-      begin="1.5s"
-      fill="freeze"/>
   </text>
 
 </svg>
