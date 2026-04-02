@@ -1,39 +1,39 @@
-<img src="header.svg" width="100%"/>
+<img src="assets/header.svg" width="100%"/>
 
 <br>
 
-<img src="typing.svg" width="100%"/>
+<img src="assets/typing.svg" width="100%"/>
 
 <br>
 
 <div align="center">
 
-<img src="label-lang.svg"/>
+<img src="assets/labels/lang.svg"/>
 
 <br>
 
-<img src="badges-lang.svg"/>
-
-<br>
-<br>
-
-<img src="label-fw.svg"/>
-
-<br>
-
-<img src="badges-fw.svg"/>
+<img src="assets/badges/lang.svg"/>
 
 <br>
 <br>
 
-<img src="label-tools.svg"/>
+<img src="assets/labels/fw.svg"/>
 
 <br>
 
-<img src="badges-tools.svg"/>
+<img src="assets/badges/fw.svg"/>
+
+<br>
+<br>
+
+<img src="assets/labels/tools.svg"/>
+
+<br>
+
+<img src="assets/badges/tools.svg"/>
 
 </div>
 
 <br>
 
-<img src="footer.svg" width="100%"/>
+<img src="assets/footer.svg" width="100%"/>
