@@ -4,24 +4,24 @@
   <rect x="0"   y="0" width="70"  height="28" rx="4" fill="#1d7a1a"/>
   <rect x="0"   y="0" width="7"   height="28" rx="4" fill="#145213"/>
   <rect x="3"   y="0" width="4"   height="28"         fill="#145213"/>
-  <text x="39"  y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">C#</text>
+  <text x="39"  y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">C#</text>
 
   <!-- JavaScript | x=78 w=132 | text-center=148 -->
   <rect x="78"  y="0" width="132" height="28" rx="4" fill="#e0c910"/>
   <rect x="78"  y="0" width="7"   height="28" rx="4" fill="#a08e00"/>
   <rect x="81"  y="0" width="4"   height="28"         fill="#a08e00"/>
-  <text x="148" y="18" text-anchor="middle" fill="#1a1a1a" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">JAVASCRIPT</text>
+  <text x="148" y="18" text-anchor="middle" fill="#1a1a1a" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">JAVASCRIPT</text>
 
   <!-- HTML5 | x=218 w=96 | text-center=270 -->
   <rect x="218" y="0" width="96"  height="28" rx="4" fill="#cc4420"/>
   <rect x="218" y="0" width="7"   height="28" rx="4" fill="#8f2b14"/>
   <rect x="221" y="0" width="4"   height="28"         fill="#8f2b14"/>
-  <text x="270" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">HTML5</text>
+  <text x="270" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">HTML5</text>
 
   <!-- CSS3 | x=322 w=83 | text-center=367 -->
   <rect x="322" y="0" width="83"  height="28" rx="4" fill="#1262a0"/>
   <rect x="322" y="0" width="7"   height="28" rx="4" fill="#0b4070"/>
   <rect x="325" y="0" width="4"   height="28"         fill="#0b4070"/>
-  <text x="367" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CSS3</text>
+  <text x="367" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CSS3</text>
 
 </svg>

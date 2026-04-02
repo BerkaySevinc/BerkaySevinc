@@ -4,30 +4,30 @@
   <rect x="0"   y="0" width="72"  height="28" rx="4" fill="#d94229"/>
   <rect x="0"   y="0" width="7"   height="28" rx="4" fill="#99301d"/>
   <rect x="3"   y="0" width="4"   height="28"         fill="#99301d"/>
-  <text x="40"  y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GIT</text>
+  <text x="40"  y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GIT</text>
 
   <!-- GITHUB | x=80 w=102 | text-center=135 -->
   <rect x="80"  y="0" width="102" height="28" rx="4" fill="#1c2025"/>
   <rect x="80"  y="0" width="7"   height="28" rx="4" fill="#0d1012"/>
   <rect x="83"  y="0" width="4"   height="28"         fill="#0d1012"/>
-  <text x="135" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GITHUB</text>
+  <text x="135" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GITHUB</text>
 
   <!-- VISUAL STUDIO | x=190 w=156 | text-center=272 -->
   <rect x="190" y="0" width="156" height="28" rx="4" fill="#4d2680"/>
   <rect x="190" y="0" width="7"   height="28" rx="4" fill="#331855"/>
   <rect x="193" y="0" width="4"   height="28"         fill="#331855"/>
-  <text x="272" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">VISUAL STUDIO</text>
+  <text x="272" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">VISUAL STUDIO</text>
 
   <!-- VS CODE | x=354 w=112 | text-center=414 -->
   <rect x="354" y="0" width="112" height="28" rx="4" fill="#0069b3"/>
   <rect x="354" y="0" width="7"   height="28" rx="4" fill="#004a80"/>
   <rect x="357" y="0" width="4"   height="28"         fill="#004a80"/>
-  <text x="414" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">VS CODE</text>
+  <text x="414" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">VS CODE</text>
 
   <!-- CLAUDE CODE | x=474 w=150 | text-center=553 -->
   <rect x="474" y="0" width="150" height="28" rx="4" fill="#bf6a05"/>
   <rect x="474" y="0" width="7"   height="28" rx="4" fill="#8a4c04"/>
   <rect x="477" y="0" width="4"   height="28"         fill="#8a4c04"/>
-  <text x="553" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CLAUDE CODE</text>
+  <text x="553" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CLAUDE CODE</text>
 
 </svg>

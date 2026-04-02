@@ -4,18 +4,18 @@
   <rect x="0"   y="0" width="82"  height="28" rx="4" fill="#4d2680"/>
   <rect x="0"   y="0" width="7"   height="28" rx="4" fill="#331855"/>
   <rect x="3"   y="0" width="4"   height="28"         fill="#331855"/>
-  <text x="45"  y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">.NET</text>
+  <text x="45"  y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">.NET</text>
 
   <!-- ASP.NET CORE | x=90 w=152 | text-center=170 -->
   <rect x="90"  y="0" width="152" height="28" rx="4" fill="#4422bb"/>
   <rect x="90"  y="0" width="7"   height="28" rx="4" fill="#2e188a"/>
   <rect x="93"  y="0" width="4"   height="28"         fill="#2e188a"/>
-  <text x="170" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">ASP.NET CORE</text>
+  <text x="170" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">ASP.NET CORE</text>
 
   <!-- NODE.JS | x=250 w=108 | text-center=308 -->
   <rect x="250" y="0" width="108" height="28" rx="4" fill="#2b802b"/>
   <rect x="250" y="0" width="7"   height="28" rx="4" fill="#1a4f1a"/>
   <rect x="253" y="0" width="4"   height="28"         fill="#1a4f1a"/>
-  <text x="308" y="18" text-anchor="middle" fill="white" font-family="Verdana,'Helvetica Neue',Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">NODE.JS</text>
+  <text x="308" y="18" text-anchor="middle" fill="white" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">NODE.JS</text>
 
 </svg>
