@@ -17,9 +17,9 @@
 
   /* Line 1: .NET &amp; C# Developer — 19 chars — 250.8px */
   @keyframes cl1 {
-    0%         { width: 0;       animation-timing-function: steps(19, end); }
-    7%         { width: 250.8px; animation-timing-function: step-end; }
-    13%        { width: 250.8px; animation-timing-function: steps(19, end); }
+    0%        { width: 0;       animation-timing-function: steps(19, end); }
+    7%      { width: 250.8px; animation-timing-function: step-end; }
+    13%     { width: 250.8px; animation-timing-function: steps(19, end); }
     17%, 100%  { width: 0; }
   }
 
@@ -27,8 +27,8 @@
   @keyframes cl2 {
     0%, 19.9%  { width: 0; }
     20%        { width: 0;       animation-timing-function: steps(22, end); }
-    27%        { width: 290.4px; animation-timing-function: step-end; }
-    33%        { width: 290.4px; animation-timing-function: steps(22, end); }
+    27%      { width: 290.4px; animation-timing-function: step-end; }
+    33%     { width: 290.4px; animation-timing-function: steps(22, end); }
     37%, 100%  { width: 0; }
   }
 
@@ -36,8 +36,8 @@
   @keyframes cl3 {
     0%, 39.9%  { width: 0; }
     40%        { width: 0;       animation-timing-function: steps(23, end); }
-    47%        { width: 303.6px; animation-timing-function: step-end; }
-    53%        { width: 303.6px; animation-timing-function: steps(23, end); }
+    47%      { width: 303.6px; animation-timing-function: step-end; }
+    53%     { width: 303.6px; animation-timing-function: steps(23, end); }
     57%, 100%  { width: 0; }
   }
 
@@ -45,8 +45,8 @@
   @keyframes cl4 {
     0%, 59.9%  { width: 0; }
     60%        { width: 0;       animation-timing-function: steps(23, end); }
-    67%        { width: 303.6px; animation-timing-function: step-end; }
-    73%        { width: 303.6px; animation-timing-function: steps(23, end); }
+    67%      { width: 303.6px; animation-timing-function: step-end; }
+    73%     { width: 303.6px; animation-timing-function: steps(23, end); }
     77%, 100%  { width: 0; }
   }
 
@@ -54,8 +54,8 @@
   @keyframes cl5 {
     0%, 79.9%  { width: 0; }
     80%        { width: 0;       animation-timing-function: steps(23, end); }
-    87%        { width: 303.6px; animation-timing-function: step-end; }
-    93%        { width: 303.6px; animation-timing-function: steps(23, end); }
+    87%      { width: 303.6px; animation-timing-function: step-end; }
+    93%     { width: 303.6px; animation-timing-function: steps(23, end); }
     97%, 100%  { width: 0; }
   }
 
@@ -67,46 +67,50 @@
   .cw5 { animation: cw5 20s infinite; }
 
   @keyframes cw1 {
-    0%        { transform: translateX(0px);     visibility: visible; animation-timing-function: steps(19, end); }
-    7%        { transform: translateX(250.8px); visibility: visible; animation-timing-function: step-end; }
-    13%       { transform: translateX(250.8px); visibility: visible; animation-timing-function: steps(19, end); }
-    17%       { transform: translateX(0px);     visibility: visible; }
+    0%       { transform: translateX(0px);      visibility: visible; animation-timing-function: steps(19, end); }
+    7%     { transform: translateX(250.8px); visibility: visible; animation-timing-function: step-end; }
+    13%    { transform: translateX(250.8px); visibility: visible; animation-timing-function: steps(19, end); }
+    17%   { transform: translateX(0px);      visibility: visible; }
     17.01%    { visibility: hidden; transform: translateX(0px); }
     100%      { visibility: hidden; transform: translateX(0px); }
   }
+
   @keyframes cw2 {
     0%, 19.9% { visibility: hidden; transform: translateX(0px); }
-    20%       { transform: translateX(0px);     visibility: visible; animation-timing-function: steps(22, end); }
-    27%       { transform: translateX(290.4px); visibility: visible; animation-timing-function: step-end; }
-    33%       { transform: translateX(290.4px); visibility: visible; animation-timing-function: steps(22, end); }
-    37%       { transform: translateX(0px);     visibility: visible; }
+    20%       { transform: translateX(0px);      visibility: visible; animation-timing-function: steps(22, end); }
+    27%     { transform: translateX(290.4px); visibility: visible; animation-timing-function: step-end; }
+    33%    { transform: translateX(290.4px); visibility: visible; animation-timing-function: steps(22, end); }
+    37%   { transform: translateX(0px);      visibility: visible; }
     37.01%    { visibility: hidden; transform: translateX(0px); }
     100%      { visibility: hidden; transform: translateX(0px); }
   }
+
   @keyframes cw3 {
     0%, 39.9% { visibility: hidden; transform: translateX(0px); }
-    40%       { transform: translateX(0px);     visibility: visible; animation-timing-function: steps(23, end); }
-    47%       { transform: translateX(303.6px); visibility: visible; animation-timing-function: step-end; }
-    53%       { transform: translateX(303.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    57%       { transform: translateX(0px);     visibility: visible; }
+    40%       { transform: translateX(0px);      visibility: visible; animation-timing-function: steps(23, end); }
+    47%     { transform: translateX(303.6px); visibility: visible; animation-timing-function: step-end; }
+    53%    { transform: translateX(303.6px); visibility: visible; animation-timing-function: steps(23, end); }
+    57%   { transform: translateX(0px);      visibility: visible; }
     57.01%    { visibility: hidden; transform: translateX(0px); }
     100%      { visibility: hidden; transform: translateX(0px); }
   }
+
   @keyframes cw4 {
     0%, 59.9% { visibility: hidden; transform: translateX(0px); }
-    60%       { transform: translateX(0px);     visibility: visible; animation-timing-function: steps(23, end); }
-    67%       { transform: translateX(303.6px); visibility: visible; animation-timing-function: step-end; }
-    73%       { transform: translateX(303.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    77%       { transform: translateX(0px);     visibility: visible; }
+    60%       { transform: translateX(0px);      visibility: visible; animation-timing-function: steps(23, end); }
+    67%     { transform: translateX(303.6px); visibility: visible; animation-timing-function: step-end; }
+    73%    { transform: translateX(303.6px); visibility: visible; animation-timing-function: steps(23, end); }
+    77%   { transform: translateX(0px);      visibility: visible; }
     77.01%    { visibility: hidden; transform: translateX(0px); }
     100%      { visibility: hidden; transform: translateX(0px); }
   }
+
   @keyframes cw5 {
     0%, 79.9% { visibility: hidden; transform: translateX(0px); }
-    80%       { transform: translateX(0px);     visibility: visible; animation-timing-function: steps(23, end); }
-    87%       { transform: translateX(303.6px); visibility: visible; animation-timing-function: step-end; }
-    93%       { transform: translateX(303.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    97%       { transform: translateX(0px);     visibility: visible; }
+    80%       { transform: translateX(0px);      visibility: visible; animation-timing-function: steps(23, end); }
+    87%     { transform: translateX(303.6px); visibility: visible; animation-timing-function: step-end; }
+    93%    { transform: translateX(303.6px); visibility: visible; animation-timing-function: steps(23, end); }
+    97%   { transform: translateX(0px);      visibility: visible; }
     97.01%    { visibility: hidden; transform: translateX(0px); }
     100%      { visibility: hidden; transform: translateX(0px); }
   }

@@ -74,9 +74,7 @@ V 0 H 0 Z">
     text-anchor="middle"
     letter-spacing="-1"
     filter="url(#text-glow)">
-
     Berkay Sevinç
-
   </text>
 
   <!-- DESC -->
@@ -88,9 +86,7 @@ V 0 H 0 Z">
     text-anchor="middle"
     letter-spacing="0.5"
     filter="url(#text-glow)">
-
     Software Engineer
-
   </text>
 
 </svg>
