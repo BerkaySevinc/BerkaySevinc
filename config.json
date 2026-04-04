@@ -1,0 +1,68 @@
+{
+  "header": {
+
+    "_generates": "assets/header.svg",
+    "_comment": "null = fetch from GitHub API",
+
+    "name": null,
+    "bio": null
+  },
+
+  "typing": {
+
+    "_generates": "assets/typing.svg",
+    "_comment": "null or [] = fetch from GitHub profile (bio, company, location, blog)",
+
+    "lines": [
+      ".NET & C# Developer",
+      "ASP.NET Core · Node.js",
+      "HTML · CSS · JavaScript",
+      "AI-Assisted Engineering",
+      "Spec-Driven Development"
+    ]
+  },
+
+  "sections": [
+
+    {
+      "_generates": "assets/sections/{id}.svg"
+    },
+
+    {
+      "id": "lang",
+      "label": "Languages",
+      "badges": [
+        { "text": "C#",          "color": "#1d7a1a" },
+        { "text": "JAVASCRIPT",  "color": "#e0c910" },
+        { "text": "HTML5",       "color": "#cc4420" },
+        { "text": "CSS3",        "color": "#1262a0" }
+      ]
+    },
+    {
+      "id": "fw",
+      "label": "Frameworks & Runtimes",
+      "badges": [
+        { "text": ".NET",         "color": "#4d2680" },
+        { "text": "ASP.NET CORE", "color": "#4422bb" },
+        { "text": "NODE.JS",      "color": "#2b802b" }
+      ]
+    },
+    {
+      "id": "tools",
+      "label": "Tools & Environment",
+      "badges": [
+        { "text": "GIT",           "color": "#d94229" },
+        { "text": "GITHUB",        "color": "#1c2025" },
+        { "text": "VISUAL STUDIO", "color": "#4d2680" },
+        { "text": "VS CODE",       "color": "#0069b3" },
+        { "text": "CLAUDE CODE",   "color": "#bf6a05" }
+      ]
+    }
+  ],
+
+  "footer": {
+
+    "_generates": "assets/footer.svg"
+
+  }
+}
