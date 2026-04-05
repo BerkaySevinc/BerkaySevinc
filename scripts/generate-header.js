@@ -27,6 +27,7 @@ async function main() {
 
   if (!overrideName || !overrideBio) {
     const headers = { 'User-Agent': 'github-profile-generator' };
+    if (process.env.GITHUB_TOKEN) headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
     const res = await fetch(`https://api.github.com/users/${owner}`, { headers });
     if (!res.ok) {
       console.error(`GitHub API error: ${res.status} ${res.statusText}`);
