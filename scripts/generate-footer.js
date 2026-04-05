@@ -1,3 +1,6 @@
+// easy-github-profile — github.com/BerkaySevinc/easy-github-profile
+// Copyright (c) 2025 BerkaySevinc — MIT License
+
 const { writeFileSync } = require('fs');
 const { join } = require('path');
 
@@ -55,6 +58,17 @@ V 350 H 0 Z">
   </defs>
 
   <rect width="100%" height="100%" fill="url(#bg-grad-inv)" mask="url(#wave-mask-inv)" />
+
+  <!-- Powered by -->
+  <text x="750" y="144"
+    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="16"
+    fill="#ffffff"
+    opacity="0.5"
+    text-anchor="middle"
+    letter-spacing="0.5">
+    made with BerkaySevinc/easy-github-profile
+  </text>
 
 </svg>`;
 
