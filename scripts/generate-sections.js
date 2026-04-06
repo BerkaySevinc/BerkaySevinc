@@ -8,7 +8,8 @@ const BADGE_H    = 28;
 const BADGE_GAP  = 8;
 const LABEL_H    = 44;
 const SECTION_GAP = 8;
-const SVG_H      = LABEL_H + SECTION_GAP + BADGE_H; // 80
+const GLOW_PAD   = 12; // extra space for glow overflow on all sides
+const SVG_H      = LABEL_H + SECTION_GAP + BADGE_H + GLOW_PAD; // 92
 
 function loadConfig() {
   try {
@@ -52,11 +53,37 @@ function buildSectionSvg(label, badges) {
   const widths = badges.map(b => badgeWidth(b.text));
   const totalBadgesW = widths.reduce((sum, w) => sum + w, 0) + (badges.length - 1) * BADGE_GAP;
   const labelTextW   = label.length * 8.5 + 20;
-  const svgW         = Math.round(Math.max(totalBadgesW, labelTextW));
-  const badgesStartX = Math.round((svgW - totalBadgesW) / 2);
+  const innerW       = Math.round(Math.max(totalBadgesW, labelTextW));
+  const svgW         = innerW + GLOW_PAD * 2;
+  const badgesStartX = Math.round((innerW - totalBadgesW) / 2) + GLOW_PAD;
   const badgesY      = LABEL_H + SECTION_GAP;
 
+  // Build per-badge filters: glow pulse + text shadow
+  let filters = '';
+  for (let i = 0; i < badges.length; i++) {
+    const { color } = badges[i];
+    const delay = (i * 1.2).toFixed(2);
+    filters += `  <filter id="glow-${i}" x="-20%" y="-60%" width="140%" height="220%">\n`;
+    filters += `    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="${color}" flood-opacity="0">\n`;
+    filters += `      <animate attributeName="flood-opacity"\n`;
+    // 20-point sine curve: sin(i/19 * π) * 0.75
+    const steps = 20;
+    const opacityVals = Array.from({ length: steps }, (_, i) => (Math.sin((i / (steps - 1)) * Math.PI) * 0.75).toFixed(3));
+    const keyTimesVals = Array.from({ length: steps }, (_, i) => (i / (steps - 1)).toFixed(3));
+    const keySplinesVals = Array.from({ length: steps - 1 }, () => '0.4 0 0.6 1');
+    filters += `        values="${opacityVals.join(';')}" dur="4s" begin="${delay}s" repeatCount="indefinite"\n`;
+    filters += `               calcMode="spline" keyTimes="${keyTimesVals.join(';')}"\n`;
+    filters += `               keySplines="${keySplinesVals.join(';')}"/>\n`;
+    filters += `    </feDropShadow>\n`;
+    filters += `  </filter>\n`;
+  }
+  // Shared blur filter for shadow text layer
+  filters += `  <filter id="text-blur" x="-60%" y="-80%" width="220%" height="260%">\n`;
+  filters += `    <feGaussianBlur stdDeviation="8 3"/>\n`;
+  filters += `  </filter>\n`;
+
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgW}" height="${SVG_H}" viewBox="0 0 ${svgW} ${SVG_H}">\n`;
+  svg += `  <defs>\n${filters}  </defs>\n`;
   svg += `  <style>\n`;
   svg += `    @media (prefers-color-scheme: light) { .label { fill: #1e1b4b; } }\n`;
   svg += `    @media (prefers-color-scheme: dark)  { .label { fill: #ffffff; } }\n`;
@@ -75,14 +102,30 @@ function buildSectionSvg(label, badges) {
     const { text, color } = badges[i];
     const w         = widths[i];
     const darkColor = darkenHex(color);
-    const textColor = isLight(color) ? '#1a1a1a' : '#ffffff';
-    const textX     = Math.round(x + (w + 7) / 2); // offset for left stripe
+    const light      = isLight(color);
+    const textColor  = light ? '#1a1a1a' : '#ffffff';
+    const shadowColor = light ? '#ffffff' : '#000000';
+    const shadowOpacity = '0.5';
+    const textX      = Math.round(x + (w + 7) / 2); // offset for left stripe
+    const textY      = badgesY + 18;
+    const scaleX     = 1.0; // no horizontal stretch
+    // shadow pivot is textX, so translate back: tx = textX - textX * scaleX = textX * (1 - scaleX)
+    const tx         = Math.round(textX * (1 - scaleX));
 
     svg += `  <!-- ${escapeXml(text)} -->\n`;
-    svg += `  <rect x="${x}"     y="${badgesY}" width="${w}" height="${BADGE_H}" rx="4" fill="${color}"/>\n`;
+    svg += `  <rect x="${x}"     y="${badgesY}" width="${w}" height="${BADGE_H}" rx="4" fill="${color}" filter="url(#glow-${i})"/>\n`;
     svg += `  <rect x="${x}"     y="${badgesY}" width="7"    height="${BADGE_H}" rx="4" fill="${darkColor}"/>\n`;
     svg += `  <rect x="${x + 3}" y="${badgesY}" width="4"    height="${BADGE_H}"        fill="${darkColor}"/>\n`;
-    svg += `  <text x="${textX}" y="${badgesY + 18}" text-anchor="middle" fill="${textColor}"`;
+    // Shadow layer: repeated 4x for density
+    for (let s = 0; s < 2; s++) {
+      svg += `  <text x="${textX}" y="${textY}" text-anchor="middle" fill="${shadowColor}" opacity="${shadowOpacity}"`;
+      svg += ` transform="translate(${tx}, 0) scale(${scaleX}, 1)"`;
+      svg += ` filter="url(#text-blur)"`;
+      svg += ` font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"`;
+      svg += ` font-size="11" font-weight="700" letter-spacing="0.8">${escapeXml(text)}</text>\n`;
+    }
+    // Real text on top
+    svg += `  <text x="${textX}" y="${textY}" text-anchor="middle" fill="${textColor}"`;
     svg += ` font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"`;
     svg += ` font-size="11" font-weight="700" letter-spacing="0.8">${escapeXml(text)}</text>\n\n`;
 

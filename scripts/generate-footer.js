@@ -45,7 +45,7 @@ C 1556 0, 1778 0, 2000 40
 C 2222 80, 2444 80, 2667 40
 C 2889 0, 3111 0, 3334 40
 V 350 H 0 Z">
-          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="6s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="9s" repeatCount="indefinite"/>
         </path>
 
         <path fill="#ffffff" opacity="0.5" d="M 0 40
@@ -55,7 +55,7 @@ C 1556 0, 1778 0, 2000 40
 C 2222 80, 2444 80, 2667 40
 C 2889 0, 3111 0, 3334 40
 V 350 H 0 Z">
-          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="12s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="14s" repeatCount="indefinite"/>
         </path>
 
       </g>

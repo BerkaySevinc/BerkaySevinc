@@ -60,6 +60,27 @@
     }
   ],
 
+  "divider": {
+
+    "_generates": "assets/divider.svg",
+    "_comment": "Thin animated ribbon divider with wavy top and bottom edges — static, no config needed"
+
+  },
+
+  "stats": {
+
+    "_generates": "assets/stats.svg",
+    "_comment": "GitHub Stats Card — fetched automatically via GitHub GraphQL API"
+
+  },
+
+  "langs": {
+
+    "_generates": "assets/langs.svg",
+    "_comment": "Top Languages Chart — fetched automatically via GitHub GraphQL API"
+
+  },
+
   "footer": {
 
     "_generates": "assets/footer.svg"

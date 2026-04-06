@@ -118,7 +118,7 @@ C 2222 230, 2444 230, 2667 270
 C 2889 310, 3111 310, 3334 270
 V 0 H 0 Z">
           <animateTransform attributeName="transform" type="translate"
-            from="-1334 0" to="0 0" dur="6s" repeatCount="indefinite"/>
+            from="-1334 0" to="0 0" dur="7s" repeatCount="indefinite"/>
         </path>
 
         <path fill="#ffffff" opacity="0.5" d="M 0 270
@@ -129,7 +129,7 @@ C 2222 230, 2444 230, 2667 270
 C 2889 310, 3111 310, 3334 270
 V 0 H 0 Z">
           <animateTransform attributeName="transform" type="translate"
-            from="-1334 0" to="0 0" dur="12s" repeatCount="indefinite"/>
+            from="-1334 0" to="0 0" dur="13s" repeatCount="indefinite"/>
         </path>
 
       </g>
