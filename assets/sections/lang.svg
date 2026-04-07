@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="467" height="92" viewBox="0 0 467 92">
+  <defs>
+  <filter id="glow-0" x="-20%" y="-60%" width="140%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#1d7a1a" flood-opacity="0">
+      <animate attributeName="flood-opacity"
+        values="0.000;0.123;0.244;0.357;0.461;0.552;0.628;0.687;0.727;0.747;0.747;0.727;0.687;0.628;0.552;0.461;0.357;0.244;0.123;0.000" dur="4s" begin="0.00s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0.000;0.053;0.105;0.158;0.211;0.263;0.316;0.368;0.421;0.474;0.526;0.579;0.632;0.684;0.737;0.789;0.842;0.895;0.947;1.000"
+               keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </feDropShadow>
+  </filter>
+  <filter id="glow-1" x="-20%" y="-60%" width="140%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#e0c910" flood-opacity="0">
+      <animate attributeName="flood-opacity"
+        values="0.000;0.123;0.244;0.357;0.461;0.552;0.628;0.687;0.727;0.747;0.747;0.727;0.687;0.628;0.552;0.461;0.357;0.244;0.123;0.000" dur="4s" begin="1.20s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0.000;0.053;0.105;0.158;0.211;0.263;0.316;0.368;0.421;0.474;0.526;0.579;0.632;0.684;0.737;0.789;0.842;0.895;0.947;1.000"
+               keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </feDropShadow>
+  </filter>
+  <filter id="glow-2" x="-20%" y="-60%" width="140%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#cc4420" flood-opacity="0">
+      <animate attributeName="flood-opacity"
+        values="0.000;0.123;0.244;0.357;0.461;0.552;0.628;0.687;0.727;0.747;0.747;0.727;0.687;0.628;0.552;0.461;0.357;0.244;0.123;0.000" dur="4s" begin="2.40s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0.000;0.053;0.105;0.158;0.211;0.263;0.316;0.368;0.421;0.474;0.526;0.579;0.632;0.684;0.737;0.789;0.842;0.895;0.947;1.000"
+               keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </feDropShadow>
+  </filter>
+  <filter id="glow-3" x="-20%" y="-60%" width="140%" height="220%">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#1262a0" flood-opacity="0">
+      <animate attributeName="flood-opacity"
+        values="0.000;0.123;0.244;0.357;0.461;0.552;0.628;0.687;0.727;0.747;0.747;0.727;0.687;0.628;0.552;0.461;0.357;0.244;0.123;0.000" dur="4s" begin="3.60s" repeatCount="indefinite"
+               calcMode="spline" keyTimes="0.000;0.053;0.105;0.158;0.211;0.263;0.316;0.368;0.421;0.474;0.526;0.579;0.632;0.684;0.737;0.789;0.842;0.895;0.947;1.000"
+               keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </feDropShadow>
+  </filter>
+  <filter id="text-blur" x="-60%" y="-80%" width="220%" height="260%">
+    <feGaussianBlur stdDeviation="8 3"/>
+  </filter>
+  </defs>
+  <style>
+    @media (prefers-color-scheme: light) { .label { fill: #1e1b4b; } }
+    @media (prefers-color-scheme: dark)  { .label { fill: #ffffff; } }
+  </style>
+
+  <!-- Label -->
+  <text class="label" x="233.5" y="26" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="600">Languages</text>
+
+  <!-- Badges -->
+  <!-- C# -->
+  <rect x="12"     y="52" width="96" height="28" rx="4" fill="#1d7a1a" filter="url(#glow-0)"/>
+  <rect x="12"     y="52" width="7"    height="28" rx="4" fill="#145312"/>
+  <rect x="15" y="52" width="4"    height="28"        fill="#145312"/>
+  <text x="64" y="70" text-anchor="middle" fill="#000000" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">C#</text>
+  <text x="64" y="70" text-anchor="middle" fill="#000000" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">C#</text>
+  <text x="64" y="70" text-anchor="middle" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">C#</text>
+
+  <!-- JAVASCRIPT -->
+  <rect x="116"     y="52" width="131" height="28" rx="4" fill="#e0c910" filter="url(#glow-1)"/>
+  <rect x="116"     y="52" width="7"    height="28" rx="4" fill="#98890b"/>
+  <rect x="119" y="52" width="4"    height="28"        fill="#98890b"/>
+  <text x="185" y="70" text-anchor="middle" fill="#ffffff" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">JAVASCRIPT</text>
+  <text x="185" y="70" text-anchor="middle" fill="#ffffff" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">JAVASCRIPT</text>
+  <text x="185" y="70" text-anchor="middle" fill="#1a1a1a" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">JAVASCRIPT</text>
+
+  <!-- HTML5 -->
+  <rect x="255"     y="52" width="96" height="28" rx="4" fill="#cc4420" filter="url(#glow-2)"/>
+  <rect x="255"     y="52" width="7"    height="28" rx="4" fill="#8b2e16"/>
+  <rect x="258" y="52" width="4"    height="28"        fill="#8b2e16"/>
+  <text x="307" y="70" text-anchor="middle" fill="#000000" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">HTML5</text>
+  <text x="307" y="70" text-anchor="middle" fill="#000000" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">HTML5</text>
+  <text x="307" y="70" text-anchor="middle" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">HTML5</text>
+
+  <!-- CSS3 -->
+  <rect x="359"     y="52" width="96" height="28" rx="4" fill="#1262a0" filter="url(#glow-3)"/>
+  <rect x="359"     y="52" width="7"    height="28" rx="4" fill="#0c436d"/>
+  <rect x="362" y="52" width="4"    height="28"        fill="#0c436d"/>
+  <text x="411" y="70" text-anchor="middle" fill="#000000" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CSS3</text>
+  <text x="411" y="70" text-anchor="middle" fill="#000000" opacity="0.5" transform="translate(0, 0) scale(1, 1)" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CSS3</text>
+  <text x="411" y="70" text-anchor="middle" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">CSS3</text>
+
+</svg>

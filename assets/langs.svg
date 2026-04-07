@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="120" viewBox="0 0 800 120">
+  <defs>
+    <clipPath id="bar-shape">
+      <rect x="20" y="42" width="760" height="22" rx="4"/>
+    </clipPath>
+    <!-- Shimmer gradient — fills the moving rect left to right -->
+    <linearGradient id="shimmer-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+      <stop offset="10%"  stop-color="white" stop-opacity="0.05"/>
+      <stop offset="20%"  stop-color="white" stop-opacity="0.15"/>
+      <stop offset="30%"  stop-color="white" stop-opacity="0.3"/>
+      <stop offset="40%"  stop-color="white" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="white" stop-opacity="0.8"/>
+      <stop offset="60%"  stop-color="white" stop-opacity="0.55"/>
+      <stop offset="70%"  stop-color="white" stop-opacity="0.3"/>
+      <stop offset="80%"  stop-color="white" stop-opacity="0.15"/>
+      <stop offset="90%"  stop-color="white" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="shimmer-clip">
+      <rect x="20" y="42" width="760" height="22" rx="4"/>
+    </clipPath>
+  </defs>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .ttl { fill: #e6edf3; }
+      .trk { fill: #21262d; }
+      .leg { fill: #b1bac4; }
+    }
+    @media (prefers-color-scheme: light) {
+      .ttl { fill: #1f2328; }
+      .trk { fill: #eaeef2; }
+      .leg { fill: #424a53; }
+    }
+    .ttl { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 14px; font-weight: 600; }
+    .leg { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 12px; font-weight: 500; }
+  </style>
+
+  <text class="ttl" x="400" y="24" text-anchor="middle">Top Languages</text>
+
+  <!-- Bar track (background) -->
+  <rect class="trk" x="20" y="42" width="760" height="22" rx="4"/>
+
+  <!-- Colored segments -->
+  <g clip-path="url(#bar-shape)">
+      <rect x="20" y="42" width="377" height="22" fill="#f1e05a"/>
+      <rect x="397" y="42" width="256" height="22" fill="#178600"/>
+      <rect x="653" y="42" width="76" height="22" fill="#663399"/>
+      <rect x="729" y="42" width="51" height="22" fill="#e34c26"/>
+  </g>
+
+  <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
+  <g clip-path="url(#shimmer-clip)">
+    <g transform="skewX(-20)">
+      <rect x="0" y="38" width="160" height="30" fill="url(#shimmer-grad)">
+        <animateTransform attributeName="transform" type="translate"
+          values="-180 0; -180 0; 960 0"
+          keyTimes="0; 0.72; 1"
+          calcMode="spline" keySplines="0 0 1 1; 0.3 0 0.7 1"
+          dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Legend with pulse -->
+  <circle cx="25" cy="88" r="5" fill="#f1e05a">
+    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.0s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+  <text x="36" y="92.5" class="leg">JavaScript 49.6%</text>
+  <circle cx="177" cy="88" r="5" fill="#178600">
+    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.4s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+  <text x="188" y="92.5" class="leg">C# 33.7%</text>
+  <circle cx="329" cy="88" r="5" fill="#663399">
+    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.8s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+  <text x="340" y="92.5" class="leg">CSS 10.0%</text>
+  <circle cx="481" cy="88" r="5" fill="#e34c26">
+    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="1.2s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+  <text x="492" y="92.5" class="leg">HTML 6.7%</text>
+  <circle cx="633" cy="88" r="5" fill="#C1F12E">
+    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="1.6s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+  <text x="644" y="92.5" class="leg">Batchfile 0.0%</text>
+
+</svg>
