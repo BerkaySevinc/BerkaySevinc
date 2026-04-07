@@ -1,8 +1,14 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
 // Copyright (c) 2025 BerkaySevinc — MIT License
 
-const { writeFileSync, mkdirSync } = require('fs');
+const { writeFileSync, mkdirSync, readFileSync } = require('fs');
 const { join, dirname } = require('path');
+
+function loadConfig() {
+  try {
+    return JSON.parse(readFileSync(join(__dirname, '..', 'config.json'), 'utf8'));
+  } catch { return {}; }
+}
 
 async function fetchStats(owner, token) {
   const headers = { 'User-Agent': 'github-profile-generator', 'Content-Type': 'application/json' };
@@ -51,17 +57,20 @@ function fmt(n) {
   return String(n);
 }
 
-function buildSvg(stats) {
-  const W = 800, H = 148, cols = 6, cw = W / cols;
-
-  const items = [
-    { value: fmt(stats.commits),   label: 'Commits'       },
-    { value: fmt(stats.prs),       label: 'Pull Requests' },
-    { value: fmt(stats.issues),    label: 'Issues'        },
-    { value: fmt(stats.stars),     label: 'Stars'         },
-    { value: fmt(stats.repos),     label: 'Repos'         },
-    { value: fmt(stats.followers), label: 'Followers'     },
+function buildSvg(stats, show) {
+  const allItems = [
+    { key: 'commits',   value: fmt(stats.commits),   label: 'Commits'       },
+    { key: 'prs',       value: fmt(stats.prs),       label: 'Pull Requests' },
+    { key: 'issues',    value: fmt(stats.issues),    label: 'Issues'        },
+    { key: 'stars',     value: fmt(stats.stars),     label: 'Stars'         },
+    { key: 'repos',     value: fmt(stats.repos),     label: 'Repos'         },
+    { key: 'followers', value: fmt(stats.followers), label: 'Followers'     },
   ];
+
+  const items = allItems.filter(it => show[it.key] !== false);
+  if (!items.length) throw new Error('stats.show: at least one stat must be enabled.');
+
+  const W = 800, H = 148, cols = items.length, cw = W / cols;
 
   let cells = '';
   for (let i = 0; i < items.length; i++) {
@@ -110,10 +119,13 @@ async function main() {
     process.exit(1);
   }
 
+  const config = loadConfig();
+  const show   = config.stats?.show ?? {};
+
   const stats = await fetchStats(owner, process.env.GITHUB_TOKEN);
   const outPath = join(__dirname, '..', 'assets', 'stats.svg');
   mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, buildSvg(stats), 'utf8');
+  writeFileSync(outPath, buildSvg(stats, show), 'utf8');
   console.log(`Generated assets/stats.svg — commits: ${stats.commits}, stars: ${stats.stars}, repos: ${stats.repos}`);
 }
 

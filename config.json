@@ -70,7 +70,16 @@
   "stats": {
 
     "_generates": "assets/stats.svg",
-    "_comment": "GitHub Stats Card — fetched automatically via GitHub GraphQL API"
+    "_comment": "GitHub Stats Card — fetched automatically via GitHub GraphQL API",
+
+    "show": {
+      "commits":   true,
+      "prs":       true,
+      "issues":    true,
+      "stars":     true,
+      "repos":     true,
+      "followers": true
+    }
 
   },
 
