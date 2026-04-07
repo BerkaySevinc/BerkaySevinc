@@ -2,7 +2,9 @@
 <img src="assets/typing.svg" width="100%"/>
 <img src="assets/divider.svg" width="100%"/>
 <br>
-<img src="assets/stats.svg" width="100%"/>
+<div align="center">
+  <img src="assets/stats.svg"/>
+</div>
 <br>
 <img src="assets/divider.svg" width="100%"/>
 <br>
