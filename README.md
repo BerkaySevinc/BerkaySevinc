@@ -14,7 +14,6 @@
 <br>
 <img src="assets/divider.svg" width="100%"/>
 <div align="center">
-
   <img src="assets/sections/lang.svg"/>
   <br>
   <br>
@@ -22,7 +21,6 @@
   <br>
   <br>
   <img src="assets/sections/tools.svg"/>
-
 </div>
 <br>
 <img src="assets/footer.svg" width="100%"/>
