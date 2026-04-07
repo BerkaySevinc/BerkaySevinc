@@ -1,8 +1,8 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
 // Copyright (c) 2025 BerkaySevinc — MIT License
 
-const { writeFileSync } = require('fs');
-const { join } = require('path');
+const { writeFileSync, mkdirSync } = require('fs');
+const { join, dirname } = require('path');
 
 const AMPLITUDE  = 10;
 const GAP        = 0;
@@ -73,6 +73,7 @@ function main() {
 </svg>`;
 
   const outPath = join(__dirname, '..', 'assets', 'divider.svg');
+  mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, svg, 'utf8');
   console.log('Generated assets/divider.svg');
 }

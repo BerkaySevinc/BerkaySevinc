@@ -1,8 +1,8 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
 // Copyright (c) 2025 BerkaySevinc — MIT License
 
-const { writeFileSync, readFileSync } = require('fs');
-const { join } = require('path');
+const { writeFileSync, readFileSync, mkdirSync } = require('fs');
+const { join, dirname } = require('path');
 
 const MAX_BIO_LENGTH = 80;
 
@@ -44,6 +44,7 @@ async function main() {
 
   const svg     = buildSvg(displayName, displayBio);
   const outPath = join(__dirname, '..', 'assets', 'header.svg');
+  mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, svg, 'utf8');
   console.log(`Generated assets/header.svg — name: "${displayName}"`);
 }

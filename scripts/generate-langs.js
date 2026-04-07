@@ -1,8 +1,8 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
 // Copyright (c) 2025 BerkaySevinc — MIT License
 
-const { writeFileSync } = require('fs');
-const { join } = require('path');
+const { writeFileSync, mkdirSync } = require('fs');
+const { join, dirname } = require('path');
 
 const MAX_LANGS = 6;
 const BAR_X = 20, BAR_Y = 42, BAR_W = 760, BAR_H = 22;
@@ -81,15 +81,6 @@ function buildSvg(langs) {
     barX += segW;
   }
 
-  // Legend items
-  const itemW = Math.floor((W - 40) / langs.length);
-  let legend = '';
-  for (let i = 0; i < langs.length; i++) {
-    const lx = 20 + i * itemW;
-    legend += `  <circle cx="${lx + 5}" cy="88" r="5" fill="${langs[i].color}"/>\n`;
-    legend += `  <text x="${lx + 16}" y="93" class="leg">${escapeXml(langs[i].name)} ${(withPct[i].pct * 100).toFixed(1)}%</text>\n`;
-  }
-
   // Legend circles with pulse animation (staggered per language)
   const itemW = Math.floor((W - 40) / langs.length);
   let legendAnimated = '';
@@ -99,10 +90,8 @@ function buildSvg(langs) {
     legendAnimated += `  <circle cx="${lx + 5}" cy="88" r="5" fill="${langs[i].color}">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="${delay}s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-    <animate attributeName="opacity" values="1;0.6;1" dur="2.5s" begin="${delay}s" repeatCount="indefinite"
-             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>\n`;
-    legendAnimated += `  <text x="${lx + 16}" y="88" class="leg" dominant-baseline="central">${escapeXml(langs[i].name)} ${(withPct[i].pct * 100).toFixed(1)}%</text>\n`;
+    legendAnimated += `  <text x="${lx + 16}" y="92.5" class="leg">${escapeXml(langs[i].name)} ${(withPct[i].pct * 100).toFixed(1)}%</text>\n`;
   }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
@@ -132,15 +121,15 @@ function buildSvg(langs) {
     @media (prefers-color-scheme: dark) {
       .ttl { fill: #e6edf3; }
       .trk { fill: #21262d; }
-      .leg { fill: #8b949e; }
+      .leg { fill: #b1bac4; }
     }
     @media (prefers-color-scheme: light) {
       .ttl { fill: #1f2328; }
       .trk { fill: #eaeef2; }
-      .leg { fill: #636e7b; }
+      .leg { fill: #424a53; }
     }
     .ttl { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 14px; font-weight: 600; }
-    .leg { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 11px; }
+    .leg { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 12px; font-weight: 500; }
   </style>
 
   <text class="ttl" x="${W / 2}" y="24" text-anchor="middle">Top Languages</text>
@@ -178,7 +167,9 @@ async function main() {
   }
 
   const langs = await fetchLangs(owner, process.env.GITHUB_TOKEN);
-  writeFileSync(join(__dirname, '..', 'assets', 'langs.svg'), buildSvg(langs), 'utf8');
+  const outPath = join(__dirname, '..', 'assets', 'langs.svg');
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, buildSvg(langs), 'utf8');
   console.log(`Generated assets/langs.svg — ${langs.map(l => l.name).join(', ')}`);
 }
 

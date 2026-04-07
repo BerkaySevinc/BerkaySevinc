@@ -1,13 +1,13 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
 // Copyright (c) 2025 BerkaySevinc — MIT License
 
-const { writeFileSync, readFileSync } = require('fs');
-const { join } = require('path');
+const { writeFileSync, readFileSync, mkdirSync } = require('fs');
+const { join, dirname } = require('path');
 
-const CHAR_WIDTH  = 13.2;
-const SVG_WIDTH   = 800;
-const CYCLE_SECS  = 20;
-const FONT_MARKER = '/* Clip rect animations */';
+const CHAR_WIDTH     = 13.2;
+const SVG_WIDTH      = 800;
+const CYCLE_SECS     = 20;
+const CURSOR_OFFSET  = 2;    // px gap between last typed char and cursor
 
 
 function loadConfig() {
@@ -32,10 +32,10 @@ function r(n) {
   return parseFloat(n.toFixed(2));
 }
 
-function buildDynamicCss(lines) {
+function buildCss(lines) {
   const N      = lines.length;
   const window = 100 / N;
-  let css = FONT_MARKER + '\n';
+  let css = '';
 
   // Clip rect animation class references
   for (let i = 0; i < N; i++) {
@@ -44,13 +44,13 @@ function buildDynamicCss(lines) {
 
   // Clip rect keyframes
   for (let i = 0; i < N; i++) {
-    const n          = i + 1;
-    const chars      = lines[i].length;
-    const width      = r(chars * CHAR_WIDTH);
-    const start      = r(i * window);
-    const typeEnd    = r(start + window * 0.35);
-    const pauseEnd   = r(start + window * 0.65);
-    const deleteEnd  = r(start + window * 0.85);
+    const n         = i + 1;
+    const chars     = lines[i].length;
+    const width     = r(chars * CHAR_WIDTH);
+    const start     = r(i * window);
+    const typeEnd   = r(start + window * 0.35);
+    const pauseEnd  = r(start + window * 0.65);
+    const deleteEnd = r(start + window * 0.85);
 
     css += `\n  /* Line ${n}: ${escapeXml(lines[i])} — ${chars} chars — ${width}px */\n`;
     css += `  @keyframes cl${n} {\n`;
@@ -70,26 +70,39 @@ function buildDynamicCss(lines) {
 
   // Cursor wrapper keyframes
   for (let i = 0; i < N; i++) {
-    const n         = i + 1;
-    const chars     = lines[i].length;
-    const width     = r(chars * CHAR_WIDTH);
-    const start     = r(i * window);
-    const typeEnd   = r(start + window * 0.35);
-    const pauseEnd  = r(start + window * 0.65);
-    const deleteEnd = r(start + window * 0.85);
+    const n          = i + 1;
+    const chars      = lines[i].length;
+    const width      = r(chars * CHAR_WIDTH);
+    const start      = r(i * window);
+    const typeEnd    = r(start + window * 0.35);
+    const pauseEnd   = r(start + window * 0.65);
+    const deleteEnd  = r(start + window * 0.85);
+    const isLast     = i === N - 1;
+    const nextStart  = isLast ? null : r((i + 1) * window);
 
     css += `\n  @keyframes cw${n} {\n`;
     if (i > 0) {
-      css += `    0%, ${r(start - 0.1)}% { visibility: hidden; transform: translateX(0px); }\n`;
+      css += `    0%, ${r(start - 0.1)}% { visibility: hidden; transform: translateX(${CURSOR_OFFSET}px); }\n`;
     }
-    css += `    ${start}%       { transform: translateX(0px);      visibility: visible; animation-timing-function: steps(${chars}, end); }\n`;
-    css += `    ${typeEnd}%     { transform: translateX(${width}px); visibility: visible; animation-timing-function: step-end; }\n`;
-    css += `    ${pauseEnd}%    { transform: translateX(${width}px); visibility: visible; animation-timing-function: steps(${chars}, end); }\n`;
-    css += `    ${deleteEnd}%   { transform: translateX(0px);      visibility: visible; }\n`;
-    css += `    ${r(deleteEnd + 0.01)}%    { visibility: hidden; transform: translateX(0px); }\n`;
-    css += `    100%      { visibility: hidden; transform: translateX(0px); }\n`;
+    css += `    ${start}%       { transform: translateX(${CURSOR_OFFSET}px);             visibility: visible; animation-timing-function: steps(${chars}, end); }\n`;
+    css += `    ${typeEnd}%     { transform: translateX(${width + CURSOR_OFFSET}px); visibility: visible; animation-timing-function: step-end; }\n`;
+    css += `    ${pauseEnd}%    { transform: translateX(${width + CURSOR_OFFSET}px); visibility: visible; animation-timing-function: steps(${chars}, end); }\n`;
+    css += `    ${deleteEnd}%   { transform: translateX(${CURSOR_OFFSET}px);             visibility: visible; }\n`;
+    if (!isLast) {
+      css += `    ${r(nextStart - 0.1)}%, 100% { visibility: hidden; transform: translateX(${CURSOR_OFFSET}px); }\n`;
+    } else {
+      css += `    100% { visibility: visible; transform: translateX(${CURSOR_OFFSET}px); }\n`;
+    }
     css += `  }\n`;
   }
+
+  // Cursor blink
+  css += `\n  /* Cursor blink */\n`;
+  css += `  .cur { fill: #A78BFA; animation: blink 1.2s step-end infinite; }\n`;
+  css += `  @keyframes blink {\n`;
+  css += `    0%, 100% { opacity: 1; }\n`;
+  css += `    50%      { opacity: 0; }\n`;
+  css += `  }\n`;
 
   return css;
 }
@@ -119,10 +132,25 @@ function buildSvgBody(lines) {
   // cursor elements
   out += '\n<!-- Cursors -->\n';
   for (let i = 0; i < lines.length; i++) {
-    out += `<g class="cw${i + 1}"><rect class="cur" x="${metrics[i].x}" y="16" width="2.5" height="22"/></g>\n`;
+    out += `<g class="cw${i + 1}"><rect class="cur" x="${metrics[i].x}" y="16" width="3.5" height="22"/></g>\n`;
   }
 
   return out;
+}
+
+function buildSvg(lines) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${SVG_WIDTH}" height="54" viewBox="0 0 ${SVG_WIDTH} 54">
+<style>
+  .t {
+    font-family: 'Consolas', 'Monaco', 'Lucida Console', 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    fill: #A78BFA;
+  }
+${buildCss(lines)}</style>
+
+${buildSvgBody(lines)}
+</svg>`;
 }
 
 async function fetchProfileLines(owner) {
@@ -155,30 +183,9 @@ async function main() {
     lines = await fetchProfileLines(owner);
   }
 
-  const existing = readFileSync(join(__dirname, '..', 'assets', 'typing.svg'), 'utf8');
-  const markerIdx = existing.indexOf(FONT_MARKER);
-  if (markerIdx === -1) {
-    console.error('Error: Font marker not found in assets/typing.svg');
-    process.exit(1);
-  }
-
-  const fontPrefix = existing.slice(0, markerIdx);
-
-  const fixedCssTail = `
-  /* Cursor blink */
-  .cur { fill: #A78BFA; animation: blink 0.8s step-end infinite; }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: 0; }
-  }
-</style>
-
-`;
-
-  const svg = fontPrefix + buildDynamicCss(lines) + fixedCssTail + buildSvgBody(lines) + '\n</svg>';
-
   const outPath = join(__dirname, '..', 'assets', 'typing.svg');
-  writeFileSync(outPath, svg, 'utf8');
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, buildSvg(lines), 'utf8');
   console.log(`Generated assets/typing.svg — ${lines.length} lines`);
 }
 

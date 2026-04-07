@@ -146,7 +146,7 @@ function main() {
   }
 
   const outDir = join(__dirname, '..', 'assets', 'sections');
-  if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
+  mkdirSync(outDir, { recursive: true });
 
   for (const section of sections) {
     if (!section.label || !section.badges?.length) {

@@ -1,8 +1,8 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
 // Copyright (c) 2025 BerkaySevinc — MIT License
 
-const { writeFileSync } = require('fs');
-const { join } = require('path');
+const { writeFileSync, mkdirSync } = require('fs');
+const { join, dirname } = require('path');
 
 async function fetchStats(owner, token) {
   const headers = { 'User-Agent': 'github-profile-generator', 'Content-Type': 'application/json' };
@@ -111,7 +111,9 @@ async function main() {
   }
 
   const stats = await fetchStats(owner, process.env.GITHUB_TOKEN);
-  writeFileSync(join(__dirname, '..', 'assets', 'stats.svg'), buildSvg(stats), 'utf8');
+  const outPath = join(__dirname, '..', 'assets', 'stats.svg');
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, buildSvg(stats), 'utf8');
   console.log(`Generated assets/stats.svg — commits: ${stats.commits}, stars: ${stats.stars}, repos: ${stats.repos}`);
 }
 
