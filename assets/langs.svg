@@ -43,10 +43,10 @@
 
   <!-- Colored segments -->
   <g clip-path="url(#bar-shape)">
-      <rect x="20" y="42" width="377" height="22" fill="#f1e05a"/>
-      <rect x="397" y="42" width="256" height="22" fill="#178600"/>
-      <rect x="653" y="42" width="76" height="22" fill="#663399"/>
-      <rect x="729" y="42" width="51" height="22" fill="#e34c26"/>
+      <rect x="20" y="42" width="379" height="22" fill="#f1e05a"/>
+      <rect x="399" y="42" width="255" height="22" fill="#178600"/>
+      <rect x="654" y="42" width="76" height="22" fill="#663399"/>
+      <rect x="730" y="42" width="50" height="22" fill="#e34c26"/>
   </g>
 
   <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
@@ -67,22 +67,22 @@
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.0s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="36" y="92.5" class="leg">JavaScript 49.6%</text>
+  <text x="36" y="92.5" class="leg">JavaScript 49.9%</text>
   <circle cx="177" cy="88" r="5" fill="#178600">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.4s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="188" y="92.5" class="leg">C# 33.7%</text>
+  <text x="188" y="92.5" class="leg">C# 33.5%</text>
   <circle cx="329" cy="88" r="5" fill="#663399">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.8s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="340" y="92.5" class="leg">CSS 10.0%</text>
+  <text x="340" y="92.5" class="leg">CSS 9.9%</text>
   <circle cx="481" cy="88" r="5" fill="#e34c26">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="1.2s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="492" y="92.5" class="leg">HTML 6.7%</text>
+  <text x="492" y="92.5" class="leg">HTML 6.6%</text>
   <circle cx="633" cy="88" r="5" fill="#C1F12E">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="1.6s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
