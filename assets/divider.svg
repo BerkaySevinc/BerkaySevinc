@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 40" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgb(30, 27, 75)"/>
+      <stop offset="100%" stop-color="rgb(76, 29, 149)"/>
+    </linearGradient>
+
+    <filter id="alpha-boost">
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="1.15"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- Top edge: fills downward, creates scalloped top border -->
+    <mask id="top-mask">
+      <g filter="url(#alpha-boost)">
+        <path fill="#ffffff" opacity="0.5" d="M 0 10
+C 222 0, 444 0, 667 10
+C 889 20, 1111 20, 1334 10
+C 1556 0, 1778 0, 2000 10
+C 2222 20, 2444 20, 2667 10
+C 2889 0, 3111 0, 3334 10
+V 40 H 0 Z">
+          <animateTransform attributeName="transform" type="translate"
+            from="-1334 0" to="0 0" dur="5s" repeatCount="indefinite"/>
+        </path>
+        <path fill="#ffffff" opacity="0.5" d="M 0 10
+C 222 0, 444 0, 667 10
+C 889 20, 1111 20, 1334 10
+C 1556 0, 1778 0, 2000 10
+C 2222 20, 2444 20, 2667 10
+C 2889 0, 3111 0, 3334 10
+V 40 H 0 Z">
+          <animateTransform attributeName="transform" type="translate"
+            from="-1334 0" to="0 0" dur="8s" repeatCount="indefinite"/>
+        </path>
+        <path fill="#ffffff" opacity="0.5" d="M 0 10
+C 222 0, 444 0, 667 10
+C 889 20, 1111 20, 1334 10
+C 1556 0, 1778 0, 2000 10
+C 2222 20, 2444 20, 2667 10
+C 2889 0, 3111 0, 3334 10
+V 40 H 0 Z">
+          <animateTransform attributeName="transform" type="translate"
+            from="-1334 0" to="0 0" dur="13s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </mask>
+
+    <!-- Bottom edge: fills upward, creates scalloped bottom border -->
+    <mask id="bottom-mask">
+      <g filter="url(#alpha-boost)">
+        <path fill="#ffffff" opacity="0.5" d="M 0 30
+C 222 40, 444 40, 667 30
+C 889 20, 1111 20, 1334 30
+C 1556 40, 1778 40, 2000 30
+C 2222 20, 2444 20, 2667 30
+C 2889 40, 3111 40, 3334 30
+V 0 H 0 Z">
+          <animateTransform attributeName="transform" type="translate"
+            from="-1334 0" to="0 0" dur="7s" repeatCount="indefinite"/>
+        </path>
+        <path fill="#ffffff" opacity="0.5" d="M 0 30
+C 222 40, 444 40, 667 30
+C 889 20, 1111 20, 1334 30
+C 1556 40, 1778 40, 2000 30
+C 2222 20, 2444 20, 2667 30
+C 2889 40, 3111 40, 3334 30
+V 0 H 0 Z">
+          <animateTransform attributeName="transform" type="translate"
+            from="-1334 0" to="0 0" dur="11s" repeatCount="indefinite"/>
+        </path>
+        <path fill="#ffffff" opacity="0.5" d="M 0 30
+C 222 40, 444 40, 667 30
+C 889 20, 1111 20, 1334 30
+C 1556 40, 1778 40, 2000 30
+C 2222 20, 2444 20, 2667 30
+C 2889 40, 3111 40, 3334 30
+V 0 H 0 Z">
+          <animateTransform attributeName="transform" type="translate"
+            from="-1334 0" to="0 0" dur="17s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </mask>
+  </defs>
+
+  <!-- Nested masks intersect: shows only the ribbon between the two wave edges -->
+  <g mask="url(#top-mask)">
+    <rect width="1500" height="40" fill="url(#bg-grad)" mask="url(#bottom-mask)"/>
+  </g>
+
+</svg>
