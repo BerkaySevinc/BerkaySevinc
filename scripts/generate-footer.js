@@ -3,15 +3,16 @@
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
+const { resolveTheme, loadTheme } = require('./theme');
 
 function main() {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 160" width="100%" height="100%">
+  const { gradientStops } = resolveTheme(loadTheme());
+  const stops = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
 
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 160" width="100%" height="100%">
   <defs>
     <linearGradient id="bg-grad-inv" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#0d1117"/>
-      <stop offset="40%"  stop-color="#1e1b4b"/>
-      <stop offset="100%" stop-color="#4c1d95"/>
+${stops}
     </linearGradient>
 
     <filter id="alpha-boost-inv">

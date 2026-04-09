@@ -3,6 +3,7 @@
 
 const { writeFileSync, readFileSync, mkdirSync, existsSync } = require('fs');
 const { join } = require('path');
+const { resolveTheme, loadTheme } = require('./theme');
 
 const BADGE_H    = 28;
 const BADGE_GAP  = 8;
@@ -49,7 +50,7 @@ function badgeWidth(text) {
   return Math.round(Math.max(50, textW) + 46); // 46 = stripe(7) + left + right padding
 }
 
-function buildSectionSvg(label, badges) {
+function buildSectionSvg(label, badges, titleColor) {
   const widths = badges.map(b => badgeWidth(b.text));
   const totalBadgesW = widths.reduce((sum, w) => sum + w, 0) + (badges.length - 1) * BADGE_GAP;
   const labelTextW   = label.length * 8.5 + 20;
@@ -85,8 +86,8 @@ function buildSectionSvg(label, badges) {
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgW}" height="${SVG_H}" viewBox="0 0 ${svgW} ${SVG_H}">\n`;
   svg += `  <defs>\n${filters}  </defs>\n`;
   svg += `  <style>\n`;
-  svg += `    @media (prefers-color-scheme: light) { .label { fill: #1e1b4b; } }\n`;
-  svg += `    @media (prefers-color-scheme: dark)  { .label { fill: #ffffff; } }\n`;
+  svg += `    @media (prefers-color-scheme: light) { .label { fill: ${titleColor.light}; } }\n`;
+  svg += `    @media (prefers-color-scheme: dark)  { .label { fill: ${titleColor.dark}; } }\n`;
   svg += `  </style>\n\n`;
 
   // Label
@@ -137,8 +138,9 @@ function buildSectionSvg(label, badges) {
 }
 
 function main() {
-  const config   = loadConfig();
-  const sections = (config.sections ?? []).filter(s => s && typeof s === 'object' && s.id);
+  const config      = loadConfig();
+  const sections    = (config.sections ?? []).filter(s => s && typeof s === 'object' && s.id);
+  const { titleColor } = resolveTheme(loadTheme());
 
   if (!sections.length) {
     console.error('Error: config.json has no valid sections.');
@@ -153,7 +155,7 @@ function main() {
       console.warn(`Skipping section "${section.id}": missing label or badges.`);
       continue;
     }
-    const svg     = buildSectionSvg(section.label, section.badges);
+    const svg     = buildSectionSvg(section.label, section.badges, titleColor);
     const outPath = join(outDir, `${section.id}.svg`);
     writeFileSync(outPath, svg, 'utf8');
     console.log(`Generated assets/sections/${section.id}.svg — ${section.badges.length} badges`);

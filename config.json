@@ -1,4 +1,14 @@
 {
+  "theme": {
+
+    "_gradient_comment": "Two-stop gradient used in header, divider, and footer backgrounds. Must be 6-digit hex values.",
+    "gradient": ["#1e1b4b", "#4c1d95"],
+
+    "_accent_comment": "Accent color used for typing text, cursor, and stats values.",
+    "accent": "#a78bfa"
+
+  },
+
   "header": {
 
     "_generates": "assets/header.svg",
@@ -25,7 +35,8 @@
   "sections": [
 
     {
-      "_generates": "assets/sections/{id}.svg"
+      "_generates": "assets/sections/{id}.svg",
+      "_comment": "Each section renders a labeled badge row. Add or remove objects below to manage sections."
     },
 
     {
@@ -92,7 +103,8 @@
 
   "footer": {
 
-    "_generates": "assets/footer.svg"
+    "_generates": "assets/footer.svg",
+    "_comment": "Animated wave footer — static, no config needed"
 
   }
 }

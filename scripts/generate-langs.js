@@ -3,6 +3,7 @@
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
+const { resolveTheme, loadTheme } = require('./theme');
 
 const MAX_LANGS = 6;
 const BAR_X = 20, BAR_Y = 42, BAR_W = 760, BAR_H = 22;
@@ -54,7 +55,7 @@ function escapeXml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function buildSvg(langs) {
+function buildSvg(langs, titleColor) {
   const W = 800, H = 120;
 
   if (!langs.length) {
@@ -119,12 +120,12 @@ function buildSvg(langs) {
   </defs>
   <style>
     @media (prefers-color-scheme: dark) {
-      .ttl { fill: #e6edf3; }
+      .ttl { fill: ${titleColor.dark}; }
       .trk { fill: #21262d; }
       .leg { fill: #b1bac4; }
     }
     @media (prefers-color-scheme: light) {
-      .ttl { fill: #1f2328; }
+      .ttl { fill: ${titleColor.light}; }
       .trk { fill: #eaeef2; }
       .leg { fill: #424a53; }
     }
@@ -169,7 +170,8 @@ async function main() {
   const langs = await fetchLangs(owner, process.env.GITHUB_TOKEN);
   const outPath = join(__dirname, '..', 'assets', 'langs.svg');
   mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, buildSvg(langs), 'utf8');
+  const { titleColor } = resolveTheme(loadTheme());
+  writeFileSync(outPath, buildSvg(langs, titleColor), 'utf8');
   console.log(`Generated assets/langs.svg — ${langs.map(l => l.name).join(', ')}`);
 }
 

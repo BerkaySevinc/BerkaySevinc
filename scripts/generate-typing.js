@@ -3,6 +3,7 @@
 
 const { writeFileSync, readFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
+const { resolveTheme, loadTheme } = require('./theme');
 
 const CHAR_WIDTH     = 13.2;
 const SVG_WIDTH      = 800;
@@ -98,7 +99,7 @@ function buildCss(lines) {
 
   // Cursor blink
   css += `\n  /* Cursor blink */\n`;
-  css += `  .cur { fill: #A78BFA; animation: blink 1.2s step-end infinite; }\n`;
+  css += `  .cur { animation: blink 1.2s step-end infinite; }\n`;
   css += `  @keyframes blink {\n`;
   css += `    0%, 100% { opacity: 1; }\n`;
   css += `    50%      { opacity: 0; }\n`;
@@ -138,15 +139,16 @@ function buildSvgBody(lines) {
   return out;
 }
 
-function buildSvg(lines) {
+function buildSvg(lines, accent) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${SVG_WIDTH}" height="54" viewBox="0 0 ${SVG_WIDTH} 54">
 <style>
   .t {
     font-family: 'Consolas', 'Monaco', 'Lucida Console', 'Courier New', monospace;
     font-size: 22px;
     font-weight: 700;
-    fill: #A78BFA;
   }
+  @media (prefers-color-scheme: dark)  { .t, .cur { fill: ${accent.dark}; } }
+  @media (prefers-color-scheme: light) { .t, .cur { fill: ${accent.light}; } }
 ${buildCss(lines)}</style>
 
 ${buildSvgBody(lines)}
@@ -185,7 +187,8 @@ async function main() {
 
   const outPath = join(__dirname, '..', 'assets', 'typing.svg');
   mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, buildSvg(lines), 'utf8');
+  const { accent } = resolveTheme(loadTheme());
+  writeFileSync(outPath, buildSvg(lines, accent), 'utf8');
   console.log(`Generated assets/typing.svg — ${lines.length} lines`);
 }
 

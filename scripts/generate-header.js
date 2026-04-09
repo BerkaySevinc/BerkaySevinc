@@ -3,6 +3,7 @@
 
 const { writeFileSync, readFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
+const { resolveTheme, loadTheme } = require('./theme');
 
 const MAX_BIO_LENGTH = 80;
 
@@ -42,7 +43,9 @@ async function main() {
   const displayName = overrideName || apiName || owner;
   const displayBio  = truncate(overrideBio ?? apiBio ?? '', MAX_BIO_LENGTH);
 
-  const svg     = buildSvg(displayName, displayBio);
+  const { gradientStops } = resolveTheme(loadTheme());
+  const stops = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
+  const svg     = buildSvg(displayName, displayBio, stops);
   const outPath = join(__dirname, '..', 'assets', 'header.svg');
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, svg, 'utf8');
@@ -62,7 +65,7 @@ function escapeXml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function buildSvg(name, bio) {
+function buildSvg(name, bio, stops) {
   const bioLine = bio
     ? `\n  <!-- DESC -->
   <text x="750" y="178"
@@ -78,12 +81,9 @@ function buildSvg(name, bio) {
     : '';
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 310" width="100%" height="100%">
-
   <defs>
     <linearGradient id="bg-grad-inv" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#0d1117"/>
-      <stop offset="40%"  stop-color="#1e1b4b"/>
-      <stop offset="100%" stop-color="#4c1d95"/>
+${stops}
     </linearGradient>
 
     <filter id="alpha-boost-inv">
