@@ -1,8 +1,16 @@
 {
   "theme": {
 
-    "_gradient_comment": "Two-stop gradient used in header, divider, and footer backgrounds. Must be 6-digit hex values.",
-    "gradient": ["#1e1b4b", "#4c1d95"],
+    "gradient": {
+      "_colors_comment": "Two-stop gradient used in header, divider, and footer backgrounds.",
+      "colors": ["#1e1b4b", "#4c1d95"],
+
+      "_fade_comment": "Fade transparency on left/right edges. Default: true.",
+      "fade": {
+        "left": true,
+        "right": false
+      }
+    },
 
     "_accent_comment": "Accent color used for typing text, cursor, and stats values.",
     "accent": "#a78bfa"
@@ -85,11 +93,11 @@
 
     "show": {
       "commits":   true,
-      "prs":       false,
-      "issues":    false,
+      "prs":       true,
+      "issues":    true,
       "stars":     true,
       "repos":     true,
-      "followers": false
+      "followers": true
     }
 
   },

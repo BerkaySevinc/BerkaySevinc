@@ -3,7 +3,7 @@
 
 const { writeFileSync, readFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme, buildFadeMask } = require('./theme');
 
 const MAX_BIO_LENGTH = 80;
 
@@ -43,9 +43,10 @@ async function main() {
   const displayName = overrideName || apiName || owner;
   const displayBio  = truncate(overrideBio ?? apiBio ?? '', MAX_BIO_LENGTH);
 
-  const { gradientStops } = resolveTheme(loadTheme());
-  const stops = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
-  const svg     = buildSvg(displayName, displayBio, stops);
+  const { gradientStops, fade } = resolveTheme(loadTheme());
+  const stops    = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
+  const fadeMask = buildFadeMask(fade);
+  const svg      = buildSvg(displayName, displayBio, stops, fadeMask);
   const outPath = join(__dirname, '..', 'assets', 'header.svg');
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, svg, 'utf8');
@@ -65,7 +66,7 @@ function escapeXml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function buildSvg(name, bio, stops) {
+function buildSvg(name, bio, stops, fadeMask) {
   const bioLine = bio
     ? `\n  <!-- DESC -->
   <text x="750" y="178"
@@ -86,6 +87,7 @@ function buildSvg(name, bio, stops) {
 ${stops}
     </linearGradient>
 
+${fadeMask ? fadeMask + '\n' : ''}
     <filter id="alpha-boost-inv">
       <feComponentTransfer>
         <feFuncA type="linear" slope="1.15" />
@@ -137,6 +139,7 @@ V 0 H 0 Z">
     </mask>
   </defs>
 
+  ${fadeMask ? '<g mask="url(#fade-mask)">' : ''}
   <!-- Layer 1: Full gradient rect with wave mask (provides wave cutout effect) -->
   <rect width="1500" height="310" fill="url(#bg-grad-inv)" mask="url(#wave-mask-inv)" />
 
@@ -156,6 +159,7 @@ V 0 H 0 Z">
     ${escapeXml(name)}
   </text>
 ${bioLine}
+  ${fadeMask ? '</g>' : ''}
 
 </svg>`;
 }

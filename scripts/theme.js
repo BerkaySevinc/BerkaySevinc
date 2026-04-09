@@ -4,8 +4,9 @@
 const { readFileSync } = require('fs');
 const { join } = require('path');
 
-const DEFAULT_GRADIENT = ['transparent', 'transparent'];
-const DEFAULT_ACCENT   = { dark: '#e6edf3', light: '#1f2328' };
+const DEFAULT_GRADIENT_COLORS = ['transparent', 'transparent'];
+const DEFAULT_ACCENT          = { dark: '#e6edf3', light: '#1f2328' };
+const FADE_OFFSET             = 40;
 
 // Named CSS colors → { r, g, b, a }
 const NAMED_COLORS = {
@@ -72,20 +73,23 @@ function isValidColor(v) {
 }
 
 /**
- * Returns { gradientStops, accent, gradientEnd }.
- * gradientStops: 3 stops:
- *   0%   — first config color at alpha 0 (fade-in start)
- *   20%  — first config color as-is
- *   100% — second config color
+ * Returns { gradientStops, accent, titleColor, fade }.
+ * fade: { left: bool, right: bool }
  */
 function resolveTheme(theme) {
-  const raw = theme?.gradient;
-  const [start, end] = (Array.isArray(raw) && raw.length === 2 && raw.every(isValidColor))
-    ? raw : DEFAULT_GRADIENT;
+  const grad   = theme?.gradient;
+  const colors = grad?.colors;
+  const [start, end] = (Array.isArray(colors) && colors.length === 2 && colors.every(isValidColor))
+    ? colors : DEFAULT_GRADIENT_COLORS;
 
   const accent = isValidColor(theme?.accent)
     ? { dark: theme.accent, light: theme.accent }
     : DEFAULT_ACCENT;
+
+  const fade = {
+    left:  grad?.fade?.left  !== false,
+    right: grad?.fade?.right !== false,
+  };
 
   const startP = parseColor(start);
   const endP   = parseColor(end);
@@ -98,7 +102,38 @@ function resolveTheme(theme) {
     accent,
     titleColor: DEFAULT_ACCENT,
     gradientEnd: end,
+    fade,
   };
+}
+
+/**
+ * Returns SVG defs markup for a combined fade mask based on fade.left / fade.right.
+ * Returns null if both sides are disabled.
+ * Usage: add returned string inside <defs>, then wrap content with <g mask="url(#fade-mask)">
+ */
+function buildFadeMask(fade) {
+  if (!fade.left && !fade.right) return null;
+
+  const stops = [];
+  if (fade.left) {
+    stops.push(`      <stop offset="0%"              stop-color="white" stop-opacity="0"/>`);
+    stops.push(`      <stop offset="${FADE_OFFSET}%"  stop-color="white" stop-opacity="1"/>`);
+  } else {
+    stops.push(`      <stop offset="0%"              stop-color="white" stop-opacity="1"/>`);
+  }
+  if (fade.right) {
+    stops.push(`      <stop offset="${100 - FADE_OFFSET}%" stop-color="white" stop-opacity="1"/>`);
+    stops.push(`      <stop offset="100%"             stop-color="white" stop-opacity="0"/>`);
+  } else {
+    stops.push(`      <stop offset="100%"             stop-color="white" stop-opacity="1"/>`);
+  }
+
+  return `    <linearGradient id="fade-grad" x1="0" y1="0" x2="1" y2="0">
+${stops.join('\n')}
+    </linearGradient>
+    <mask id="fade-mask">
+      <rect width="100%" height="100%" fill="url(#fade-grad)"/>
+    </mask>`;
 }
 
 function loadTheme() {
@@ -110,4 +145,4 @@ function loadTheme() {
   }
 }
 
-module.exports = { resolveTheme, loadTheme };
+module.exports = { resolveTheme, loadTheme, buildFadeMask };

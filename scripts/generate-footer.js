@@ -3,11 +3,12 @@
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme, buildFadeMask } = require('./theme');
 
 function main() {
-  const { gradientStops } = resolveTheme(loadTheme());
-  const stops = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
+  const { gradientStops, fade } = resolveTheme(loadTheme());
+  const stops    = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
+  const fadeMask = buildFadeMask(fade);
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 160" width="100%" height="100%">
   <defs>
@@ -15,6 +16,7 @@ function main() {
 ${stops}
     </linearGradient>
 
+${fadeMask ? fadeMask + '\n' : ''}
     <filter id="alpha-boost-inv">
       <feComponentTransfer>
         <feFuncA type="linear" slope="1.15" />
@@ -63,6 +65,7 @@ V 350 H 0 Z">
     </mask>
   </defs>
 
+  ${fadeMask ? '<g mask="url(#fade-mask)">' : ''}
   <rect width="100%" height="100%" fill="url(#bg-grad-inv)" mask="url(#wave-mask-inv)" />
 
   <!-- Powered by -->
@@ -76,6 +79,7 @@ V 350 H 0 Z">
     filter="url(#text-shadow)">
     made with BerkaySevinc/easy-github-profile
   </text>
+  ${fadeMask ? '</g>' : ''}
 
 </svg>`;
 

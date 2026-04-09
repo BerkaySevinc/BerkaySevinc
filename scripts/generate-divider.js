@@ -3,7 +3,7 @@
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme, buildFadeMask } = require('./theme');
 
 const AMPLITUDE  = 10;
 const GAP        = 0;
@@ -32,8 +32,9 @@ V ${fillTo} H 0 Z">
 }
 
 function main() {
-  const { gradientStops } = resolveTheme(loadTheme());
-  const stops = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
+  const { gradientStops, fade } = resolveTheme(loadTheme());
+  const stops    = gradientStops.map(s => `      <stop offset="${s.offset}" stop-color="${s.color}"/>`).join('\n');
+  const fadeMask = buildFadeMask(fade);
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 ${H}" width="100%" height="100%">
   <defs>
@@ -41,6 +42,7 @@ function main() {
 ${stops}
     </linearGradient>
 
+${fadeMask ? fadeMask + '\n' : ''}
     <filter id="alpha-boost">
       <feComponentTransfer>
         <feFuncA type="linear" slope="1.15"/>
@@ -67,9 +69,11 @@ ${stops}
   </defs>
 
   <!-- Nested masks intersect: shows only the ribbon between the two wave edges -->
-  <g mask="url(#top-mask)">
-    <rect width="1500" height="${H}" fill="url(#bg-grad)" mask="url(#bottom-mask)"/>
-  </g>
+  ${fadeMask ? '<g mask="url(#fade-mask)">' : ''}
+    <g mask="url(#top-mask)">
+      <rect width="1500" height="${H}" fill="url(#bg-grad)" mask="url(#bottom-mask)"/>
+    </g>
+  ${fadeMask ? '</g>' : ''}
 
 </svg>`;
 
