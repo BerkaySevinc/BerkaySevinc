@@ -6,7 +6,7 @@ const { join } = require('path');
 
 const DEFAULT_GRADIENT_COLORS = ['transparent', 'transparent'];
 const DEFAULT_ACCENT          = { dark: '#e6edf3', light: '#1f2328' };
-const FADE_OFFSET             = 40;
+const FADE_OFFSET             = 50;
 
 // Named CSS colors → { r, g, b, a }
 const NAMED_COLORS = {
