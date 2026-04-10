@@ -5,10 +5,10 @@
       "_colors_comment": "Two-stop gradient used in header, divider, and footer backgrounds.",
       "colors": ["#1e1b4b", "#4c1d95"],
 
-      "_fade_comment": "Fade transparency on left/right edges. Default: true.",
+      "_fade_comment": "Fade transparency on left/right edges.",
       "fade": {
         "left": true,
-        "right": false
+        "right": true
       }
     },
 
