@@ -14,13 +14,23 @@
 <br>
 <img src="assets/divider.svg" width="100%"/>
 <div align="center">
-  <img src="assets/sections/lang.svg"/>
-  <br>
-  <br>
-  <img src="assets/sections/fw.svg"/>
-  <br>
-  <br>
-  <img src="assets/sections/tools.svg"/>
+  <img src="assets/labels/lang.svg"/><br>
+  <img src="assets/badges/csharp.svg">
+  <img src="assets/badges/javascript.svg">
+  <img src="assets/badges/html5.svg">
+  <img src="assets/badges/css3.svg">
+  <br><br>
+  <img src="assets/labels/fw.svg"/><br>
+  <img src="assets/badges/dotnet.svg">
+  <img src="assets/badges/aspnet-core.svg">
+  <img src="assets/badges/nodejs.svg">
+  <br><br>
+  <img src="assets/labels/tools.svg"/><br>
+  <img src="assets/badges/git.svg">
+  <img src="assets/badges/github.svg">
+  <img src="assets/badges/visual-studio.svg">
+  <img src="assets/badges/vscode.svg">
+  <img src="assets/badges/claude-code.svg">
 </div>
 <br>
 <img src="assets/footer.svg" width="100%"/>

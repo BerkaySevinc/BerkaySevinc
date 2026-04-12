@@ -2,6 +2,7 @@
   "theme": {
 
     "gradient": {
+      
       "_colors_comment": "Two-stop gradient used in header, divider, and footer backgrounds.",
       "colors": ["#1e1b4b", "#4c1d95"],
 
@@ -40,43 +41,33 @@
     ]
   },
 
-  "sections": [
-
-    {
-      "_generates": "assets/sections/{id}.svg",
-      "_comment": "Each section renders a labeled badge row. Add or remove objects below to manage sections."
+  "labels": [
+    { 
+      "_generates": "assets/labels/{id}.svg" 
     },
 
+    { "id": "lang",  "text": "Languages" },
+    { "id": "fw",    "text": "Frameworks & Runtimes" },
+    { "id": "tools", "text": "Tools & Environment" }
+  ],
+
+  "badges": [
     {
-      "id": "lang",
-      "label": "Languages",
-      "badges": [
-        { "text": "C#",          "color": "#1d7a1a" },
-        { "text": "JAVASCRIPT",  "color": "#e0c910" },
-        { "text": "HTML5",       "color": "#cc4420" },
-        { "text": "CSS3",        "color": "#1262a0" }
-      ]
+      "_generates": "assets/badges/{id}.svg"
     },
-    {
-      "id": "fw",
-      "label": "Frameworks & Runtimes",
-      "badges": [
-        { "text": ".NET",         "color": "#4d2680" },
-        { "text": "ASP.NET CORE", "color": "#4422bb" },
-        { "text": "NODE.JS",      "color": "#2b802b" }
-      ]
-    },
-    {
-      "id": "tools",
-      "label": "Tools & Environment",
-      "badges": [
-        { "text": "GIT",           "color": "#d94229" },
-        { "text": "GITHUB",        "color": "#1c2025" },
-        { "text": "VISUAL STUDIO", "color": "#4d2680" },
-        { "text": "VS CODE",       "color": "#0069b3" },
-        { "text": "CLAUDE CODE",   "color": "#bf6a05" }
-      ]
-    }
+
+    { "id": "csharp",        "text": "C#",           "color": "#1d7a1a" },
+    { "id": "javascript",    "text": "JAVASCRIPT",   "color": "#e0c910" },
+    { "id": "html5",         "text": "HTML5",        "color": "#cc4420" },
+    { "id": "css3",          "text": "CSS3",         "color": "#1262a0" },
+    { "id": "dotnet",        "text": ".NET",         "color": "#4d2680" },
+    { "id": "aspnet-core",   "text": "ASP.NET CORE", "color": "#4422bb" },
+    { "id": "nodejs",        "text": "NODE.JS",      "color": "#2b802b" },
+    { "id": "git",           "text": "GIT",          "color": "#d94229" },
+    { "id": "github",        "text": "GITHUB",       "color": "#1c2025" },
+    { "id": "visual-studio", "text": "VISUAL STUDIO","color": "#4d2680" },
+    { "id": "vscode",        "text": "VS CODE",      "color": "#0069b3" },
+    { "id": "claude-code",   "text": "CLAUDE CODE",  "color": "#bf6a05" }
   ],
 
   "divider": {
