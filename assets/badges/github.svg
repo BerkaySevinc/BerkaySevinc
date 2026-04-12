@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="103" height="34" viewBox="0 0 103 34">
+  <defs>
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#1c2025" flood-opacity="0">
+        <animate attributeName="flood-opacity" values="0.000;0.123;0.244;0.357;0.461;0.552;0.628;0.687;0.727;0.747;0.747;0.727;0.687;0.628;0.552;0.461;0.357;0.244;0.123;0.000" dur="4s" repeatCount="indefinite"
+                 calcMode="spline" keyTimes="0.000;0.053;0.105;0.158;0.211;0.263;0.316;0.368;0.421;0.474;0.526;0.579;0.632;0.684;0.737;0.789;0.842;0.895;0.947;1.000" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+      </feDropShadow>
+    </filter>
+    <filter id="text-blur" x="-60%" y="-80%" width="220%" height="260%">
+      <feGaussianBlur stdDeviation="8 3"/>
+    </filter>
+  </defs>
+
+  <rect x="3" y="3" width="97" height="28" rx="4" fill="#1c2025" filter="url(#glow)"/>
+  <rect x="3" y="3" width="7" height="28" rx="4" fill="#131619"/>
+  <rect x="6" y="3" width="4" height="28" fill="#131619"/>
+  <text x="55" y="21" text-anchor="middle" fill="#000000" opacity="0.5" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GITHUB</text>
+  <text x="55" y="21" text-anchor="middle" fill="#000000" opacity="0.5" filter="url(#text-blur)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GITHUB</text>
+  <text x="55" y="21" text-anchor="middle" fill="#ffffff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="0.8">GITHUB</text>
+</svg>

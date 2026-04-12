@@ -44,9 +44,9 @@
   <!-- Colored segments -->
   <g clip-path="url(#bar-shape)">
       <rect x="20" y="42" width="379" height="22" fill="#f1e05a"/>
-      <rect x="399" y="42" width="250" height="22" fill="#178600"/>
-      <rect x="649" y="42" width="74" height="22" fill="#663399"/>
-      <rect x="723" y="42" width="56" height="22" fill="#e34c26"/>
+      <rect x="399" y="42" width="251" height="22" fill="#178600"/>
+      <rect x="650" y="42" width="74" height="22" fill="#663399"/>
+      <rect x="724" y="42" width="56" height="22" fill="#e34c26"/>
   </g>
 
   <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
@@ -67,12 +67,12 @@
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.0s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="36" y="92.5" class="leg">JavaScript 49.9%</text>
+  <text x="36" y="92.5" class="leg">JavaScript 49.8%</text>
   <circle cx="177" cy="88" r="5" fill="#178600">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.4s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="188" y="92.5" class="leg">C# 32.9%</text>
+  <text x="188" y="92.5" class="leg">C# 33.0%</text>
   <circle cx="329" cy="88" r="5" fill="#663399">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.8s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
