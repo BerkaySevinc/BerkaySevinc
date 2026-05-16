@@ -43,10 +43,12 @@
 
   <!-- Colored segments -->
   <g clip-path="url(#bar-shape)">
-      <rect x="20" y="42" width="379" height="22" fill="#f1e05a"/>
-      <rect x="399" y="42" width="251" height="22" fill="#178600"/>
-      <rect x="650" y="42" width="74" height="22" fill="#663399"/>
-      <rect x="724" y="42" width="56" height="22" fill="#e34c26"/>
+      <rect x="20" y="42" width="340" height="22" fill="#f1e05a"/>
+      <rect x="360" y="42" width="208" height="22" fill="#178600"/>
+      <rect x="568" y="42" width="68" height="22" fill="#663399"/>
+      <rect x="636" y="42" width="52" height="22" fill="#3178c6"/>
+      <rect x="688" y="42" width="47" height="22" fill="#e34c26"/>
+      <rect x="735" y="42" width="45" height="22" fill="#012456"/>
   </g>
 
   <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
@@ -67,26 +69,31 @@
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.0s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="36" y="92.5" class="leg">JavaScript 49.8%</text>
-  <circle cx="177" cy="88" r="5" fill="#178600">
+  <text x="36" y="92.5" class="leg">JavaScript 44.7%</text>
+  <circle cx="151" cy="88" r="5" fill="#178600">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.4s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="188" y="92.5" class="leg">C# 33.0%</text>
-  <circle cx="329" cy="88" r="5" fill="#663399">
+  <text x="162" y="92.5" class="leg">C# 27.3%</text>
+  <circle cx="277" cy="88" r="5" fill="#663399">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="0.8s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="340" y="92.5" class="leg">CSS 9.8%</text>
-  <circle cx="481" cy="88" r="5" fill="#e34c26">
+  <text x="288" y="92.5" class="leg">CSS 9.0%</text>
+  <circle cx="403" cy="88" r="5" fill="#3178c6">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="1.2s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="492" y="92.5" class="leg">HTML 7.4%</text>
-  <circle cx="633" cy="88" r="5" fill="#C1F12E">
+  <text x="414" y="92.5" class="leg">TypeScript 6.9%</text>
+  <circle cx="529" cy="88" r="5" fill="#e34c26">
     <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="1.6s" repeatCount="indefinite"
              calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
   </circle>
-  <text x="644" y="92.5" class="leg">Batchfile 0.0%</text>
+  <text x="540" y="92.5" class="leg">HTML 6.2%</text>
+  <circle cx="655" cy="88" r="5" fill="#012456">
+    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="2.0s" repeatCount="indefinite"
+             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </circle>
+  <text x="666" y="92.5" class="leg">PowerShell 5.9%</text>
 
 </svg>
