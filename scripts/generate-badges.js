@@ -1,8 +1,9 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
-const { writeFileSync, readFileSync, mkdirSync } = require('fs');
+const { writeFileSync, mkdirSync } = require('fs');
 const { join } = require('path');
+const { loadConfig } = require('./lib/config');
 
 const BADGE_H   = 28;
 const GLOW_PAD  = 3;
@@ -11,12 +12,6 @@ const LETTER_SP = 0.8;
 const STRIPE_W  = 7;
 const STRIPE_PAD = 3;
 const BADGE_RX  = 4;
-
-function loadConfig() {
-  try {
-    return JSON.parse(readFileSync(join(__dirname, '..', 'config.json'), 'utf8'));
-  } catch { return {}; }
-}
 
 function escapeXml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -53,31 +48,34 @@ function buildBadgeSvg(text, color) {
   const shadowColor = light ? '#ffffff' : '#000000';
 
   const steps   = 20;
-  const vals    = Array.from({length:steps},(_,k)=>(Math.sin((k/(steps-1))*Math.PI)*0.75).toFixed(3));
-  const times   = Array.from({length:steps},(_,k)=>(k/(steps-1)).toFixed(3));
+  const vals    = Array.from({length:steps},(_,k)=>(Math.sin((k/(steps-1))*Math.PI)*0.75).toFixed(2));
+  const times   = Array.from({length:steps},(_,k)=>(k/(steps-1)).toFixed(2));
   const splines = Array.from({length:steps-1},()=>'0.4 0 0.6 1');
 
   let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}">\n`;
   svg += `  <defs>\n`;
-  svg += `    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">\n`;
+  // Filter region sized to the blur's actual reach, not more.
+  svg += `    <filter id="glow" x="-20%" y="-30%" width="140%" height="160%">\n`;
   svg += `      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="${color}" flood-opacity="0">\n`;
   svg += `        <animate attributeName="flood-opacity" values="${vals.join(';')}" dur="4s" repeatCount="indefinite"\n`;
   svg += `                 calcMode="spline" keyTimes="${times.join(';')}" keySplines="${splines.join(';')}"/>\n`;
   svg += `      </feDropShadow>\n`;
   svg += `    </filter>\n`;
+  // One blur pass, halved alpha, merged with itself — same result as two
+  // stacked 50%-opacity copies, at half the blur cost.
   svg += `    <filter id="text-blur" x="-60%" y="-80%" width="220%" height="260%">\n`;
-  svg += `      <feGaussianBlur stdDeviation="8 3"/>\n`;
+  svg += `      <feGaussianBlur stdDeviation="8 3" result="b"/>\n`;
+  svg += `      <feComponentTransfer in="b" result="h"><feFuncA type="linear" slope="0.5"/></feComponentTransfer>\n`;
+  svg += `      <feMerge><feMergeNode in="h"/><feMergeNode in="h"/></feMerge>\n`;
   svg += `    </filter>\n`;
   svg += `  </defs>\n\n`;
 
-  svg += `  <rect x="${bx}" y="${by}" width="${w}" height="${BADGE_H}" rx="${BADGE_RX}" fill="${color}" filter="url(#glow)"/>\n`;
+  svg += `  <rect x="${bx}" y="${by}" width="${w}" height="${BADGE_H}" rx="${BADGE_RX}" fill="${color}" filter="url(#glow)" style="will-change:filter;"/>\n`;
   svg += `  <rect x="${bx}" y="${by}" width="${STRIPE_W}" height="${BADGE_H}" rx="${BADGE_RX}" fill="${darkColor}"/>\n`;
   svg += `  <rect x="${bx+STRIPE_PAD}" y="${by}" width="${STRIPE_W-STRIPE_PAD}" height="${BADGE_H}" fill="${darkColor}"/>\n`;
-  for (let s = 0; s < 2; s++) {
-    svg += `  <text x="${textX}" y="${textY}" text-anchor="middle" fill="${shadowColor}" opacity="0.5" filter="url(#text-blur)"`;
-    svg += ` font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"`;
-    svg += ` font-size="${FONT_SIZE}" font-weight="700" letter-spacing="${LETTER_SP}">${escapeXml(text)}</text>\n`;
-  }
+  svg += `  <text x="${textX}" y="${textY}" text-anchor="middle" fill="${shadowColor}" filter="url(#text-blur)"`;
+  svg += ` font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"`;
+  svg += ` font-size="${FONT_SIZE}" font-weight="700" letter-spacing="${LETTER_SP}">${escapeXml(text)}</text>\n`;
   svg += `  <text x="${textX}" y="${textY}" text-anchor="middle" fill="${textColor}"`;
   svg += ` font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"`;
   svg += ` font-size="${FONT_SIZE}" font-weight="700" letter-spacing="${LETTER_SP}">${escapeXml(text)}</text>\n`;
@@ -89,7 +87,7 @@ function main() {
   const config = loadConfig();
   const badges = (config.badges ?? []).filter(b => b && b.id && b.text && b.color);
 
-  if (!badges.length) { console.error('Error: config.json has no valid badges.'); process.exit(1); }
+  if (!badges.length) { console.error('Error: config.jsonc has no valid badges.'); process.exit(1); }
 
   const outDir = join(__dirname, '..', 'assets', 'badges');
   mkdirSync(outDir, { recursive: true });

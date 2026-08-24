@@ -1,9 +1,9 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme } = require('./lib/theme');
 
 const MAX_LANGS = 6;
 const BAR_X = 20, BAR_Y = 42, BAR_W = 760, BAR_H = 22;
@@ -88,10 +88,8 @@ function buildSvg(langs, titleColor) {
   for (let i = 0; i < langs.length; i++) {
     const lx = 20 + i * itemW;
     const delay = (i * 0.4).toFixed(1);
-    legendAnimated += `  <circle cx="${lx + 5}" cy="88" r="5" fill="${langs[i].color}">
-    <animate attributeName="r" values="5;6.5;5" dur="2.5s" begin="${delay}s" repeatCount="indefinite"
-             calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-  </circle>\n`;
+    // scale(1.3) on r=5 reaches r=6.5 — compositable, unlike animating r directly.
+    legendAnimated += `  <circle class="pulse" cx="${lx + 5}" cy="88" r="5" fill="${langs[i].color}" style="animation-delay:${delay}s;"/>\n`;
     legendAnimated += `  <text x="${lx + 16}" y="92.5" class="leg">${escapeXml(langs[i].name)} ${(withPct[i].pct * 100).toFixed(1)}%</text>\n`;
   }
 
@@ -131,6 +129,19 @@ function buildSvg(langs, titleColor) {
     }
     .ttl { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 14px; font-weight: 600; }
     .leg { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size: 12px; font-weight: 500; }
+
+    .shimmer { will-change: transform; animation: shimmer-slide 8s linear infinite; }
+    @keyframes shimmer-slide {
+      0%   { transform: translateX(-180px); }
+      72%  { transform: translateX(-180px); animation-timing-function: cubic-bezier(0.3,0,0.7,1); }
+      100% { transform: translateX(${(BAR_X + BAR_W + 180)}px); }
+    }
+
+    .pulse { will-change: transform; animation: legend-pulse 2.5s cubic-bezier(0.4,0,0.6,1) infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes legend-pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.3); }
+    }
   </style>
 
   <text class="ttl" x="${W / 2}" y="24" text-anchor="middle">Top Languages</text>
@@ -145,13 +156,7 @@ ${barSegs}  </g>
   <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
   <g clip-path="url(#shimmer-clip)">
     <g transform="skewX(-20)">
-      <rect x="0" y="${BAR_Y - 4}" width="160" height="${BAR_H + 8}" fill="url(#shimmer-grad)">
-        <animateTransform attributeName="transform" type="translate"
-          values="-180 0; -180 0; ${BAR_X + BAR_W + 180} 0"
-          keyTimes="0; 0.72; 1"
-          calcMode="spline" keySplines="0 0 1 1; 0.3 0 0.7 1"
-          dur="8s" repeatCount="indefinite"/>
-      </rect>
+      <rect class="shimmer" x="0" y="${BAR_Y - 4}" width="160" height="${BAR_H + 8}" fill="url(#shimmer-grad)"/>
     </g>
   </g>
 

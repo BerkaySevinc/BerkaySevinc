@@ -1,15 +1,21 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme } = require('./lib/theme');
 
 function main() {
   const { startColor, endColor, fadeMaskStops } = resolveTheme(loadTheme());
+  const syncedAt = new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 160" width="100%" height="100%">
   <defs>
+    <style>
+      .wv{will-change:transform;animation-name:wv-slide;animation-timing-function:linear;animation-iteration-count:infinite;}
+      @keyframes wv-slide{from{transform:translateX(-1334px);}to{transform:translateX(0);}}
+    </style>
+
     <linearGradient id="bg-grad-inv" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"   stop-color="${startColor}"/>
       <stop offset="100%" stop-color="${endColor}"/>
@@ -38,35 +44,29 @@ ${fadeMaskStops}
     <mask id="wave-mask-inv">
       <g filter="url(#alpha-boost-inv)">
 
-        <path fill="#ffffff" opacity="0.5" d="M 0 40
+        <path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:5s;" d="M 0 40
 C 222 0, 444 0, 667 40
 C 889 80, 1111 80, 1334 40
 C 1556 0, 1778 0, 2000 40
 C 2222 80, 2444 80, 2667 40
 C 2889 0, 3111 0, 3334 40
-V 350 H 0 Z">
-          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="5s" repeatCount="indefinite"/>
-        </path>
+V 350 H 0 Z"/>
 
-        <path fill="#ffffff" opacity="0.5" d="M 0 40
+        <path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:9s;" d="M 0 40
 C 222 0, 444 0, 667 40
 C 889 80, 1111 80, 1334 40
 C 1556 0, 1778 0, 2000 40
 C 2222 80, 2444 80, 2667 40
 C 2889 0, 3111 0, 3334 40
-V 350 H 0 Z">
-          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="9s" repeatCount="indefinite"/>
-        </path>
+V 350 H 0 Z"/>
 
-        <path fill="#ffffff" opacity="0.5" d="M 0 40
+        <path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:14s;" d="M 0 40
 C 222 0, 444 0, 667 40
 C 889 80, 1111 80, 1334 40
 C 1556 0, 1778 0, 2000 40
 C 2222 80, 2444 80, 2667 40
 C 2889 0, 3111 0, 3334 40
-V 350 H 0 Z">
-          <animateTransform attributeName="transform" type="translate" from="-1334 0" to="0 0" dur="14s" repeatCount="indefinite"/>
-        </path>
+V 350 H 0 Z"/>
 
       </g>
     </mask>
@@ -88,6 +88,18 @@ V 350 H 0 Z">
     letter-spacing="0.5"
     filter="url(#text-shadow)">
     made with BerkaySevinc/easy-github-profile
+  </text>
+
+  <!-- Last synced -->
+  <text x="1460" y="138"
+    font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="15"
+    fill="#ffffff"
+    fill-opacity="0.4"
+    text-anchor="end"
+    letter-spacing="0.4"
+    filter="url(#text-shadow)">
+    ${syncedAt}
   </text>
 
 </svg>`;

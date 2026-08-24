@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
-      - 'config.json'
+      - 'config.jsonc'
       - '.github/workflows/generate.yml'
   schedule:
     - cron: '0 0 * * *'  # Every day at midnight UTC
@@ -27,14 +27,10 @@ jobs:
 
       - name: Generate SVGs
         run: |
-          node scripts/generate-header.js
-          node scripts/generate-typing.js
-          node scripts/generate-footer.js
-          node scripts/generate-labels.js
-          node scripts/generate-badges.js
-          node scripts/generate-stats.js
-          node scripts/generate-langs.js
-          node scripts/generate-divider.js
+          rm -rf assets/*
+          for f in scripts/*.js; do
+            node "$f"
+          done
         env:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -43,5 +39,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/header.svg assets/typing.svg assets/footer.svg assets/labels/ assets/badges/ assets/stats.svg assets/langs.svg assets/divider.svg
+          git add assets/
           git diff --staged --quiet || (git commit -m "chore: regenerate assets" && git push origin main)

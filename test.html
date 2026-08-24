@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Preview</title>
+  <style>
+    /* ── Variables ── */
+    :root {
+      --bg:          #0d1117;
+      --bg-secondary:#161b22;
+      --border:      #30363d;
+      --text:        #e6edf3;
+      --text-muted:  #8b949e;
+      --readme-bg:   #0d1117;
+      --readme-max:  820px;
+      --readme-pad:  24px;
+      --mobile-w:    390px;
+    }
+    .light {
+      --bg:          #f6f8fa;
+      --bg-secondary:#ffffff;
+      --border:      #d0d7de;
+      --text:        #1f2328;
+      --text-muted:  #636e7b;
+      --readme-bg:   #ffffff;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background .2s, color .2s;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .topbar-title span { color: var(--text); }
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 12px;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 13px;
+      transition: background .15s, border-color .15s;
+    }
+    .theme-toggle:hover { background: var(--border); }
+
+    /* ── Layout ── */
+    .previews {
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      min-height: calc(100vh - 53px);
+    }
+
+    /* ── Panel ── */
+    .panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .panel-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    /* ── PC frame ── */
+    .panel-pc { flex: 0 0 auto; }
+    .frame-pc {
+      width: var(--readme-max);
+      background: var(--readme-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: background .2s, border-color .2s;
+    }
+    .readme-content {
+      padding: var(--readme-pad);
+    }
+    .readme-content p {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .readme-content p img {
+      max-width: 100%;
+      display: block;
+    }
+    .readme-content [align="center"] {
+      text-align: center;
+    }
+    .readme-content [align="center"] img {
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    /* ── Mobile frame ── */
+    .panel-mobile { flex: 0 0 auto; }
+    .frame-mobile-outer {
+      width: var(--mobile-w);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: background .2s, border-color .2s;
+    }
+    .frame-mobile-inner {
+      background: var(--readme-bg);
+      transition: background .2s;
+    }
+    .frame-mobile-inner .readme-content {
+      width: 100%;
+      padding: 16px;
+    }
+
+    /* ── Frame header bar ── */
+    .frame-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      height: 40px;
+      background: var(--bg);
+      font-size: 13px;
+      transition: background .2s, border-color .2s;
+      flex-shrink: 0;
+    }
+    .frame-header-title {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      font-weight: 500;
+    }
+    .frame-header-title .repo { color: var(--text); }
+    .frame-header-title .sep  { color: var(--text-muted); margin: 0 4px; }
+    .frame-header-title .file-name { color: #58a6ff; }
+    .frame-header-title .file-ext  { color: var(--text-muted); }
+    .frame-header-icon {
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+
+    /* ── Loading / error ── */
+    .status {
+      padding: 48px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-title">Profile Preview — <span>README.md</span></div>
+    <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">
+      <span id="themeIcon">☀️</span>
+      <span id="themeLabel">Light mode</span>
+    </button>
+  </div>
+
+  <div class="previews">
+    <div class="panel panel-pc">
+      <div class="panel-label">Desktop</div>
+      <div class="frame-pc">
+        <div class="frame-header">
+          <div class="frame-header-title">
+            <span class="repo">Username</span>
+            <span class="sep">/</span>
+            <span class="file-name">README</span><span class="file-ext">.md</span>
+          </div>
+        </div>
+        <div class="readme-content" id="pc-content">
+          <div class="status">Loading…</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-mobile">
+      <div class="panel-label">Mobile</div>
+      <div class="frame-mobile-outer">
+        <div class="frame-header">
+          <div class="frame-header-title">
+            <span class="repo">Username</span>
+            <span class="sep">/</span>
+            <span class="file-name">README</span><span class="file-ext">.md</span>
+          </div>
+        </div>
+        <div class="frame-mobile-inner">
+          <div class="readme-content" id="mobile-content">
+            <div class="status">Loading…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Theme ──
+    const saved = localStorage.getItem('preview-theme') ?? 'dark';
+    if (saved === 'light') applyLight();
+    else applyDark();
+
+    function applyLight() {
+      document.body.classList.add('light');
+      document.documentElement.style.colorScheme = 'light';
+      document.getElementById('themeIcon').textContent  = '🌙';
+      document.getElementById('themeLabel').textContent = 'Dark mode';
+    }
+    function applyDark() {
+      document.body.classList.remove('light');
+      document.documentElement.style.colorScheme = 'dark';
+      document.getElementById('themeIcon').textContent  = '☀️';
+      document.getElementById('themeLabel').textContent = 'Light mode';
+    }
+    function toggleTheme() {
+      const isLight = document.body.classList.contains('light');
+      if (isLight) { applyDark();  localStorage.setItem('preview-theme', 'dark'); }
+      else         { applyLight(); localStorage.setItem('preview-theme', 'light'); }
+    }
+
+    // ── Load README ──
+    async function load() {
+      let html;
+      try {
+        const md = await fetch('README.md').then(r => r.text());
+        html = extractProfile(md);
+      } catch (e) {
+        const msg = `<div class="status">Failed to load README.md<br><small>${e.message}</small></div>`;
+        document.getElementById('pc-content').innerHTML     = msg;
+        document.getElementById('mobile-content').innerHTML = msg;
+        return;
+      }
+      document.getElementById('pc-content').innerHTML     = html;
+      document.getElementById('mobile-content').innerHTML = html;
+    }
+
+    function extractProfile(md) {
+      const start = md.indexOf('<!-- PROFILE:START -->');
+      const end   = md.indexOf('<!-- PROFILE:END -->');
+
+      // Markers found — extract between them
+      if (start !== -1 && end !== -1) {
+        return mdToHtml(md.slice(start + '<!-- PROFILE:START -->'.length, end).trim());
+      }
+
+      // No markers — use full README (user already cleaned it up)
+      return mdToHtml(md.trim());
+    }
+
+    // Minimal markdown → HTML (only what GitHub profile READMEs use)
+    function mdToHtml(md) {
+      return md
+        // Strip markdown headings
+        .replace(/^#{1,6}\s+.+$/gm, '')
+        // Strip blockquotes
+        .replace(/^>\s*.+$/gm, '')
+        // Strip horizontal rules
+        .replace(/^---+$/gm, '')
+        // Wrap standalone <img> lines (not indented = not inside a div) in <p> tags
+        .replace(/^(<img\b[^>]*\/?>)$/gm, '<p>$1</p>')
+        // Collapse 3+ blank lines to 2
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+    }
+
+    load();
+  </script>
+</body>
+</html>

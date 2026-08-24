@@ -1,15 +1,10 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
-const { writeFileSync, mkdirSync, readFileSync } = require('fs');
+const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
-
-function loadConfig() {
-  try {
-    return JSON.parse(readFileSync(join(__dirname, '..', 'config.json'), 'utf8'));
-  } catch { return {}; }
-}
+const { resolveTheme, loadTheme } = require('./lib/theme');
+const { loadConfig } = require('./lib/config');
 
 async function fetchStats(owner, token) {
   const headers = { 'User-Agent': 'github-profile-generator', 'Content-Type': 'application/json' };

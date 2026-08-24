@@ -1,20 +1,12 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
-const { writeFileSync, readFileSync, mkdirSync } = require('fs');
+const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme } = require('./lib/theme');
+const { loadConfig } = require('./lib/config');
 
 const MAX_BIO_LENGTH = 80;
-
-function loadConfig() {
-  try {
-    const raw = readFileSync(join(__dirname, '..', 'config.json'), 'utf8');
-    return JSON.parse(raw);
-  } catch {
-    return {};
-  }
-}
 
 async function main() {
   const owner = process.env.GITHUB_REPOSITORY_OWNER;
@@ -81,6 +73,11 @@ function buildSvg(name, bio, { startColor, endColor, fadeMaskStops }) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 310" width="100%" height="100%">
   <defs>
+    <style>
+      .wv{will-change:transform;animation-name:wv-slide;animation-timing-function:linear;animation-iteration-count:infinite;}
+      @keyframes wv-slide{from{transform:translateX(-1334px);}to{transform:translateX(0);}}
+    </style>
+
     <linearGradient id="bg-grad-inv" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"   stop-color="${startColor}"/>
       <stop offset="100%" stop-color="${endColor}"/>
@@ -109,38 +106,29 @@ ${fadeMaskStops}
     <mask id="wave-mask-inv">
       <g filter="url(#alpha-boost-inv)">
 
-        <path fill="#ffffff" opacity="0.5" d="M 0 270
+        <path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:4s;" d="M 0 270
 C 222 310, 444 310, 667 270
 C 889 230, 1111 230, 1334 270
 C 1556 310, 1778 310, 2000 270
 C 2222 230, 2444 230, 2667 270
 C 2889 310, 3111 310, 3334 270
-V 0 H 0 Z">
-          <animateTransform attributeName="transform" type="translate"
-            from="-1334 0" to="0 0" dur="4s" repeatCount="indefinite"/>
-        </path>
+V 0 H 0 Z"/>
 
-        <path fill="#ffffff" opacity="0.5" d="M 0 270
+        <path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:7s;" d="M 0 270
 C 222 310, 444 310, 667 270
 C 889 230, 1111 230, 1334 270
 C 1556 310, 1778 310, 2000 270
 C 2222 230, 2444 230, 2667 270
 C 2889 310, 3111 310, 3334 270
-V 0 H 0 Z">
-          <animateTransform attributeName="transform" type="translate"
-            from="-1334 0" to="0 0" dur="7s" repeatCount="indefinite"/>
-        </path>
+V 0 H 0 Z"/>
 
-        <path fill="#ffffff" opacity="0.5" d="M 0 270
+        <path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:13s;" d="M 0 270
 C 222 310, 444 310, 667 270
 C 889 230, 1111 230, 1334 270
 C 1556 310, 1778 310, 2000 270
 C 2222 230, 2444 230, 2667 270
 C 2889 310, 3111 310, 3334 270
-V 0 H 0 Z">
-          <animateTransform attributeName="transform" type="translate"
-            from="-1334 0" to="0 0" dur="13s" repeatCount="indefinite"/>
-        </path>
+V 0 H 0 Z"/>
 
       </g>
     </mask>

@@ -1,20 +1,15 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
-const { writeFileSync, readFileSync, mkdirSync } = require('fs');
+const { writeFileSync, mkdirSync } = require('fs');
 const { join } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme } = require('./lib/theme');
+const { loadConfig } = require('./lib/config');
 
 const FONT_SIZE = 15;
 const FONT_W    = 8.5; // approximate px per character at font-size 15, weight 600
 const PAD       = 12;  // padding on all sides
 const LABEL_H   = FONT_SIZE + PAD * 2; // 47
-
-function loadConfig() {
-  try {
-    return JSON.parse(readFileSync(join(__dirname, '..', 'config.json'), 'utf8'));
-  } catch { return {}; }
-}
 
 function escapeXml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -41,7 +36,7 @@ function main() {
   const labels = (config.labels ?? []).filter(l => l && l.id && l.text);
   const { titleColor } = resolveTheme(loadTheme());
 
-  if (!labels.length) { console.error('Error: config.json has no valid labels.'); process.exit(1); }
+  if (!labels.length) { console.error('Error: config.jsonc has no valid labels.'); process.exit(1); }
 
   const outDir = join(__dirname, '..', 'assets', 'labels');
   mkdirSync(outDir, { recursive: true });

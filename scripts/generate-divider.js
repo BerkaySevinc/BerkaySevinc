@@ -1,9 +1,9 @@
 // easy-github-profile — github.com/BerkaySevinc/easy-github-profile
-// Copyright (c) 2025 BerkaySevinc — MIT License
+// Copyright (c) 2026 BerkaySevinc — MIT License
 
 const { writeFileSync, mkdirSync } = require('fs');
 const { join, dirname } = require('path');
-const { resolveTheme, loadTheme } = require('./theme');
+const { resolveTheme, loadTheme } = require('./lib/theme');
 
 const AMPLITUDE  = 10;
 const GAP        = 0;
@@ -19,16 +19,14 @@ function wavePath(centerY, amplitude, fillDir, dur) {
     : [centerY + amplitude, centerY - amplitude]; // valley then peak
   const fillTo = fillDir === 'down' ? H : 0;
 
-  return `<path fill="#ffffff" opacity="0.5" d="M 0 ${centerY}
+  // CSS transform, not SMIL animateTransform — composites more reliably.
+  return `<path class="wv" fill="#ffffff" opacity="0.5" style="animation-duration:${dur};" d="M 0 ${centerY}
 C 222 ${a}, 444 ${a}, 667 ${centerY}
 C 889 ${b}, 1111 ${b}, 1334 ${centerY}
 C 1556 ${a}, 1778 ${a}, 2000 ${centerY}
 C 2222 ${b}, 2444 ${b}, 2667 ${centerY}
 C 2889 ${a}, 3111 ${a}, 3334 ${centerY}
-V ${fillTo} H 0 Z">
-          <animateTransform attributeName="transform" type="translate"
-            from="-1334 0" to="0 0" dur="${dur}" repeatCount="indefinite"/>
-        </path>`;
+V ${fillTo} H 0 Z"/>`;
 }
 
 function main() {
@@ -36,6 +34,11 @@ function main() {
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 ${H}" width="100%" height="100%">
   <defs>
+    <style>
+      .wv{will-change:transform;animation-name:wv-slide;animation-timing-function:linear;animation-iteration-count:infinite;}
+      @keyframes wv-slide{from{transform:translateX(-1334px);}to{transform:translateX(0);}}
+    </style>
+
     <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"   stop-color="${startColor}"/>
       <stop offset="100%" stop-color="${endColor}"/>

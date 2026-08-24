@@ -1,0 +1,130 @@
+{
+  "theme": {
+
+    "gradient": {
+
+      // Two-stop gradient used in header, divider, and footer backgrounds.
+      "colors": ["#1e1b4b", "#4c1d95"],
+
+      // Fade transparency on left/right edges.
+      "fade": {
+        "left": true,
+        "right": true
+      }
+    },
+
+    // Accent color used for typing text, cursor, and stats values.
+    "accent": "#a78bfa"
+
+  },
+
+  "header": {
+
+    // -> assets/header.svg
+    // null = fetch from GitHub API
+
+    "name": null,
+    "bio": null
+  },
+
+  "typing": {
+
+    // -> assets/typing.svg
+    // null or [] = fetch from GitHub profile (bio, company, location, blog)
+
+    "lines": [
+      ".NET & C# Developer",
+      "ASP.NET Core · Node.js",
+      "HTML · CSS · JavaScript",
+      "AI-Assisted Engineering",
+      "Spec-Driven Development"
+    ]
+  },
+
+  "labels": [
+
+    // -> assets/labels/{id}.svg
+
+    { "id": "lang",  "text": "Languages" },
+    { "id": "fw",    "text": "Frameworks & Runtimes" },
+    { "id": "tools", "text": "Tools & Environment" }
+  ],
+
+  "badges": [
+
+    // -> assets/badges/{id}.svg
+
+    { "id": "csharp",        "text": "C#",           "color": "#1d7a1a" },
+    { "id": "javascript",    "text": "JAVASCRIPT",   "color": "#e0c910" },
+    { "id": "html5",         "text": "HTML5",        "color": "#cc4420" },
+    { "id": "css3",          "text": "CSS3",         "color": "#1262a0" },
+    { "id": "dotnet",        "text": ".NET",         "color": "#4d2680" },
+    { "id": "aspnet-core",   "text": "ASP.NET CORE", "color": "#4422bb" },
+    { "id": "nodejs",        "text": "NODE.JS",      "color": "#2b802b" },
+    { "id": "git",           "text": "GIT",          "color": "#d94229" },
+    { "id": "github",        "text": "GITHUB",       "color": "#1c2025" },
+    { "id": "visual-studio", "text": "VISUAL STUDIO","color": "#4d2680" },
+    { "id": "vscode",        "text": "VS CODE",      "color": "#0069b3" },
+    { "id": "claude-code",   "text": "CLAUDE CODE",  "color": "#bf6a05" }
+  ],
+
+  "stats": {
+
+    // -> assets/stats.svg 
+    // fetched automatically via GitHub GraphQL API
+
+    "show": {
+      "commits":   true,
+      "prs":       true,
+      "issues":    true,
+      "stars":     true,
+      "repos":     true,
+      "followers": true
+    }
+
+  },
+
+  "langs": {
+
+    // -> assets/langs.svg
+    // fetched automatically via GitHub GraphQL API
+
+  },
+
+  "contributionGraph": {
+
+    // -> assets/contribution-graph.svg
+    // Contribution graph — fetched via GitHub GraphQL API. Effects combine freely.
+
+    "effects": {
+      "matrixRain":   true,
+      "tetrisDropIn": true,
+      "digitFlicker": true
+    }
+
+  },
+
+  "contributionSnake": {
+
+    // -> assets/contribution-snake.svg
+    // Snake that eats your contribution graph — static, no JS. Works alongside contributionGraph or on its own.
+
+    // Hex color for the snake. null = uses theme.accent instead.
+    "color": null
+
+  },
+
+  "divider": {
+
+    // -> assets/divider.svg
+    // thin animated ribbon divider with wavy top and bottom edges, static, no config needed
+
+  },
+
+  "footer": {
+
+    // -> assets/footer.svg
+    // animated wave footer, static, no config needed
+
+  }
+}
