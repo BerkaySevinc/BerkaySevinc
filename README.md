@@ -36,7 +36,6 @@
 <br>
 <img src="assets/divider.svg" width="100%"/>
 <br>
-<img src="assets/contribution-graph.svg" width="100%"/>
 <img src="assets/contribution-snake.svg" width="100%"/>
 <br>
 <img src="assets/footer.svg" width="100%"/>
