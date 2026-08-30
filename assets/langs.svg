@@ -56,12 +56,12 @@
 
   <!-- Colored segments -->
   <g clip-path="url(#bar-shape)">
-      <rect x="20" y="42" width="333" height="22" fill="#f1e05a"/>
-      <rect x="353" y="42" width="163" height="22" fill="#7355dd"/>
-      <rect x="516" y="42" width="78" height="22" fill="#663399"/>
-      <rect x="594" y="42" width="71" height="22" fill="#012456"/>
-      <rect x="665" y="42" width="61" height="22" fill="#3178c6"/>
-      <rect x="726" y="42" width="54" height="22" fill="#e34c26"/>
+      <rect x="20" y="42" width="334" height="22" fill="#f1e05a"/>
+      <rect x="354" y="42" width="163" height="22" fill="#7355dd"/>
+      <rect x="517" y="42" width="78" height="22" fill="#663399"/>
+      <rect x="595" y="42" width="71" height="22" fill="#012456"/>
+      <rect x="666" y="42" width="60" height="22" fill="#3178c6"/>
+      <rect x="726" y="42" width="53" height="22" fill="#e34c26"/>
   </g>
 
   <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
@@ -73,9 +73,9 @@
 
   <!-- Legend with pulse -->
   <circle class="pulse" cx="25" cy="88" r="5" fill="#f1e05a" style="animation-delay:0.0s;"/>
-  <text x="36" y="92.5" class="leg">JavaScript 43.8%</text>
+  <text x="36" y="92.5" class="leg">JavaScript 44.0%</text>
   <circle class="pulse" cx="151" cy="88" r="5" fill="#7355dd" style="animation-delay:0.4s;"/>
-  <text x="162" y="92.5" class="leg">C# 21.5%</text>
+  <text x="162" y="92.5" class="leg">C# 21.4%</text>
   <circle class="pulse" cx="277" cy="88" r="5" fill="#663399" style="animation-delay:0.8s;"/>
   <text x="288" y="92.5" class="leg">CSS 10.3%</text>
   <circle class="pulse" cx="403" cy="88" r="5" fill="#012456" style="animation-delay:1.2s;"/>
@@ -83,6 +83,6 @@
   <circle class="pulse" cx="529" cy="88" r="5" fill="#3178c6" style="animation-delay:1.6s;"/>
   <text x="540" y="92.5" class="leg">TypeScript 8.0%</text>
   <circle class="pulse" cx="655" cy="88" r="5" fill="#e34c26" style="animation-delay:2.0s;"/>
-  <text x="666" y="92.5" class="leg">HTML 7.1%</text>
+  <text x="666" y="92.5" class="leg">HTML 7.0%</text>
 
 </svg>
