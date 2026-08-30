@@ -8,7 +8,7 @@ const { loadConfig } = require('./lib/config');
 
 const CHAR_WIDTH     = 13.2;
 const SVG_WIDTH      = 800;
-const CYCLE_SECS     = 20;
+const SECS_PER_LINE  = 4;    // 20s / 5 default lines — cycle length scales with line count to keep this pace
 const CURSOR_OFFSET  = 2;    // px gap between last typed char and cursor
 
 function escapeXml(str) {
@@ -24,13 +24,13 @@ function r(n) {
   return parseFloat(n.toFixed(2));
 }
 
-function buildCss(lines) {
+function buildCss(lines, cycleSecs) {
   const N      = lines.length;
   const window = 100 / N;
   let css = '';
 
   for (let i = 0; i < N; i++) {
-    css += `  .cr${i + 1} { animation: cl${i + 1} ${CYCLE_SECS}s infinite; }\n`;
+    css += `  .cr${i + 1} { animation: cl${i + 1} ${cycleSecs}s infinite; }\n`;
   }
 
   for (let i = 0; i < N; i++) {
@@ -54,7 +54,7 @@ function buildCss(lines) {
 
   css += '\n  /* Cursor wrappers — control position and visibility */\n';
   for (let i = 0; i < N; i++) {
-    css += `  .cw${i + 1} { animation: cw${i + 1} ${CYCLE_SECS}s infinite; }\n`;
+    css += `  .cw${i + 1} { animation: cw${i + 1} ${cycleSecs}s infinite; }\n`;
   }
 
   for (let i = 0; i < N; i++) {
@@ -123,6 +123,7 @@ function buildSvgBody(lines) {
 }
 
 function buildSvg(lines, accent) {
+  const cycleSecs = Math.max(1, Math.round(SECS_PER_LINE * lines.length));
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${SVG_WIDTH}" height="54" viewBox="0 0 ${SVG_WIDTH} 54">
 <style>
   .t {
@@ -132,7 +133,7 @@ function buildSvg(lines, accent) {
   }
   @media (prefers-color-scheme: dark)  { .t, .cur { fill: ${accent.dark}; } }
   @media (prefers-color-scheme: light) { .t, .cur { fill: ${accent.light}; } }
-${buildCss(lines)}</style>
+${buildCss(lines, cycleSecs)}</style>
 
 ${buildSvgBody(lines)}
 </svg>`;

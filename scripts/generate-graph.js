@@ -90,7 +90,11 @@ function buildSvg(grid, effects) {
     style += `@keyframes tet-drop{
       0%{transform:translateY(-${MARGIN + 20}px);opacity:0;}
       6%{opacity:1;}9%{transform:translateY(0);}10.5%{transform:translateY(-2px);}12%{transform:translateY(0);}
-      70%{transform:translateY(0);opacity:1;}100%{transform:translateY(0);opacity:1;}}`;
+      70%{transform:translateY(0);opacity:1;}100%{transform:translateY(0);opacity:1;}}
+    @keyframes tet-drop-pos{
+      0%{transform:translateY(-${MARGIN + 20}px);}
+      9%{transform:translateY(0);}10.5%{transform:translateY(-2px);}12%{transform:translateY(0);}
+      100%{transform:translateY(0);}}`;
   }
   for (let c = 0; c < WEEKS; c++) {
     for (let r = 0; r < DAYS; r++) {
@@ -196,7 +200,22 @@ function buildSvg(grid, effects) {
         if (!level || Math.random() < 0.55) { i++; continue; } // null (no day) or 0 (no contributions)
         const x = cx(c), y = cy(r);
         const delay = -((i % 40) / 40) * loopDur - Math.random() * 0.6;
-        glyphs += `<text x="${x.toFixed(1)}" y="${(y + 2.6).toFixed(1)}" text-anchor="middle" font-family="ui-monospace,'IBM Plex Mono',monospace" font-size="7.5" fill="#eafff0" style="animation:dg-flicker ${loopDur}s linear infinite;animation-delay:${delay.toFixed(2)}s;">${level}</text>`;
+        // When cells also drop in, layer tet-drop-pos (transform only, no
+        // opacity) alongside dg-flicker so the digit falls with its own
+        // cell instead of flickering in place while the square drops past
+        // it — same per-cell delay as the cell's own tet-drop.
+        let glyphStyle;
+        if (effects.tetrisDropIn) {
+          const dropDelayFrac = (c / WEEKS) * 0.55 + (r / DAYS) * 0.1;
+          glyphStyle = `animation-name:dg-flicker,tet-drop-pos;` +
+            `animation-duration:${loopDur}s,${tetrisDur}s;` +
+            `animation-timing-function:linear,cubic-bezier(.2,.9,.3,1.2);` +
+            `animation-iteration-count:infinite,infinite;` +
+            `animation-delay:${delay.toFixed(2)}s,${(-dropDelayFrac * tetrisDur).toFixed(2)}s;`;
+        } else {
+          glyphStyle = `animation:dg-flicker ${loopDur}s linear infinite;animation-delay:${delay.toFixed(2)}s;`;
+        }
+        glyphs += `<text x="${x.toFixed(1)}" y="${(y + 2.6).toFixed(1)}" text-anchor="middle" font-family="ui-monospace,'IBM Plex Mono',monospace" font-size="7.5" fill="#eafff0" style="${glyphStyle}">${level}</text>`;
         i++;
       }
     }
