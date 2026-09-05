@@ -34,7 +34,7 @@
   <text x="500.0" y="93"  text-anchor="middle" class="val">21</text>
   <text x="500.0" y="118" text-anchor="middle" class="lbl">Repos</text>
   <line x1="600" y1="48" x2="600" y2="136" class="div"/>
-  <text x="700.0" y="93"  text-anchor="middle" class="val">38</text>
+  <text x="700.0" y="93"  text-anchor="middle" class="val">41</text>
   <text x="700.0" y="118" text-anchor="middle" class="lbl">Followers</text>
 
 </svg>
