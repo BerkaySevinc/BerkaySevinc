@@ -60,8 +60,8 @@
       <rect x="363" y="42" width="160" height="22" fill="#7355dd"/>
       <rect x="523" y="42" width="77" height="22" fill="#663399"/>
       <rect x="600" y="42" width="69" height="22" fill="#012456"/>
-      <rect x="669" y="42" width="59" height="22" fill="#3178c6"/>
-      <rect x="728" y="42" width="52" height="22" fill="#e34c26"/>
+      <rect x="669" y="42" width="60" height="22" fill="#3178c6"/>
+      <rect x="729" y="42" width="52" height="22" fill="#e34c26"/>
   </g>
 
   <!-- Shimmer overlay on bar: diagonal rect translates across, clipped to bar -->
