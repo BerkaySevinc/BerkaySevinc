@@ -7,104 +7,144 @@
   }
   @media (prefers-color-scheme: dark)  { .t, .cur { fill: #a78bfa; } }
   @media (prefers-color-scheme: light) { .t, .cur { fill: #a78bfa; } }
-  .cr1 { animation: cl1 20s infinite; }
-  .cr2 { animation: cl2 20s infinite; }
-  .cr3 { animation: cl3 20s infinite; }
-  .cr4 { animation: cl4 20s infinite; }
-  .cr5 { animation: cl5 20s infinite; }
+  .cr1 { animation: cl1 28s infinite; }
+  .cr2 { animation: cl2 28s infinite; }
+  .cr3 { animation: cl3 28s infinite; }
+  .cr4 { animation: cl4 28s infinite; }
+  .cr5 { animation: cl5 28s infinite; }
+  .cr6 { animation: cl6 28s infinite; }
+  .cr7 { animation: cl7 28s infinite; }
 
-  /* Line 1: .NET &amp; C# Developer — 19 chars — 250.8px */
+  /* Line 1: .NET · Node.js — 14 chars — 184.8px */
   @keyframes cl1 {
-    0%        { width: 0;       animation-timing-function: steps(19, end); }
-    7%      { width: 250.8px; animation-timing-function: step-end; }
-    13%     { width: 250.8px; animation-timing-function: steps(19, end); }
-    17%, 100%  { width: 0; }
+    0%        { width: 0;       animation-timing-function: steps(14, end); }
+    5%      { width: 184.8px; animation-timing-function: step-end; }
+    9.29%     { width: 184.8px; animation-timing-function: steps(14, end); }
+    12.14%, 100%  { width: 0; }
   }
 
-  /* Line 2: ASP.NET Core · Node.js — 22 chars — 290.4px */
+  /* Line 2: AWS · SAM — 9 chars — 118.8px */
   @keyframes cl2 {
-    0%, 19.9%  { width: 0; }
-    20%        { width: 0;       animation-timing-function: steps(22, end); }
-    27%      { width: 290.4px; animation-timing-function: step-end; }
-    33%     { width: 290.4px; animation-timing-function: steps(22, end); }
-    37%, 100%  { width: 0; }
+    0%, 14.19%  { width: 0; }
+    14.29%        { width: 0;       animation-timing-function: steps(9, end); }
+    19.29%      { width: 118.8px; animation-timing-function: step-end; }
+    23.58%     { width: 118.8px; animation-timing-function: steps(9, end); }
+    26.43%, 100%  { width: 0; }
   }
 
-  /* Line 3: HTML · CSS · JavaScript — 23 chars — 303.6px */
+  /* Line 3: Terraform — 9 chars — 118.8px */
   @keyframes cl3 {
-    0%, 39.9%  { width: 0; }
-    40%        { width: 0;       animation-timing-function: steps(23, end); }
-    47%      { width: 303.6px; animation-timing-function: step-end; }
-    53%     { width: 303.6px; animation-timing-function: steps(23, end); }
-    57%, 100%  { width: 0; }
+    0%, 28.47%  { width: 0; }
+    28.57%        { width: 0;       animation-timing-function: steps(9, end); }
+    33.57%      { width: 118.8px; animation-timing-function: step-end; }
+    37.86%     { width: 118.8px; animation-timing-function: steps(9, end); }
+    40.71%, 100%  { width: 0; }
   }
 
-  /* Line 4: AI-Assisted Engineering — 23 chars — 303.6px */
+  /* Line 4: HTML · CSS · JavaScript — 23 chars — 303.6px */
   @keyframes cl4 {
-    0%, 59.9%  { width: 0; }
-    60%        { width: 0;       animation-timing-function: steps(23, end); }
-    67%      { width: 303.6px; animation-timing-function: step-end; }
-    73%     { width: 303.6px; animation-timing-function: steps(23, end); }
-    77%, 100%  { width: 0; }
+    0%, 42.76%  { width: 0; }
+    42.86%        { width: 0;       animation-timing-function: steps(23, end); }
+    47.86%      { width: 303.6px; animation-timing-function: step-end; }
+    52.15%     { width: 303.6px; animation-timing-function: steps(23, end); }
+    55%, 100%  { width: 0; }
   }
 
-  /* Line 5: Spec-Driven Development — 23 chars — 303.6px */
+  /* Line 5: React · TypeScript — 18 chars — 237.6px */
   @keyframes cl5 {
-    0%, 79.9%  { width: 0; }
-    80%        { width: 0;       animation-timing-function: steps(23, end); }
-    87%      { width: 303.6px; animation-timing-function: step-end; }
-    93%     { width: 303.6px; animation-timing-function: steps(23, end); }
-    97%, 100%  { width: 0; }
+    0%, 57.04%  { width: 0; }
+    57.14%        { width: 0;       animation-timing-function: steps(18, end); }
+    62.14%      { width: 237.6px; animation-timing-function: step-end; }
+    66.43%     { width: 237.6px; animation-timing-function: steps(18, end); }
+    69.28%, 100%  { width: 0; }
+  }
+
+  /* Line 6: AI-Assisted Engineering — 23 chars — 303.6px */
+  @keyframes cl6 {
+    0%, 71.33%  { width: 0; }
+    71.43%        { width: 0;       animation-timing-function: steps(23, end); }
+    76.43%      { width: 303.6px; animation-timing-function: step-end; }
+    80.72%     { width: 303.6px; animation-timing-function: steps(23, end); }
+    83.57%, 100%  { width: 0; }
+  }
+
+  /* Line 7: Spec-Driven Development — 23 chars — 303.6px */
+  @keyframes cl7 {
+    0%, 85.61%  { width: 0; }
+    85.71%        { width: 0;       animation-timing-function: steps(23, end); }
+    90.71%      { width: 303.6px; animation-timing-function: step-end; }
+    95%     { width: 303.6px; animation-timing-function: steps(23, end); }
+    97.85%, 100%  { width: 0; }
   }
 
   /* Cursor wrappers — control position and visibility */
-  .cw1 { animation: cw1 20s infinite; }
-  .cw2 { animation: cw2 20s infinite; }
-  .cw3 { animation: cw3 20s infinite; }
-  .cw4 { animation: cw4 20s infinite; }
-  .cw5 { animation: cw5 20s infinite; }
+  .cw1 { animation: cw1 28s infinite; }
+  .cw2 { animation: cw2 28s infinite; }
+  .cw3 { animation: cw3 28s infinite; }
+  .cw4 { animation: cw4 28s infinite; }
+  .cw5 { animation: cw5 28s infinite; }
+  .cw6 { animation: cw6 28s infinite; }
+  .cw7 { animation: cw7 28s infinite; }
 
   @keyframes cw1 {
-    0%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(19, end); }
-    7%     { transform: translateX(252.8px); visibility: visible; animation-timing-function: step-end; }
-    13%    { transform: translateX(252.8px); visibility: visible; animation-timing-function: steps(19, end); }
-    17%   { transform: translateX(2px);             visibility: visible; }
-    19.9%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(14, end); }
+    5%     { transform: translateX(186.8px); visibility: visible; animation-timing-function: step-end; }
+    9.29%    { transform: translateX(186.8px); visibility: visible; animation-timing-function: steps(14, end); }
+    12.14%   { transform: translateX(2px);             visibility: visible; }
+    14.19%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw2 {
-    0%, 19.9% { visibility: hidden; transform: translateX(2px); }
-    20%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(22, end); }
-    27%     { transform: translateX(292.4px); visibility: visible; animation-timing-function: step-end; }
-    33%    { transform: translateX(292.4px); visibility: visible; animation-timing-function: steps(22, end); }
-    37%   { transform: translateX(2px);             visibility: visible; }
-    39.9%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%, 14.19% { visibility: hidden; transform: translateX(2px); }
+    14.29%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(9, end); }
+    19.29%     { transform: translateX(120.8px); visibility: visible; animation-timing-function: step-end; }
+    23.58%    { transform: translateX(120.8px); visibility: visible; animation-timing-function: steps(9, end); }
+    26.43%   { transform: translateX(2px);             visibility: visible; }
+    28.47%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw3 {
-    0%, 39.9% { visibility: hidden; transform: translateX(2px); }
-    40%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
-    47%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
-    53%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    57%   { transform: translateX(2px);             visibility: visible; }
-    59.9%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%, 28.47% { visibility: hidden; transform: translateX(2px); }
+    28.57%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(9, end); }
+    33.57%     { transform: translateX(120.8px); visibility: visible; animation-timing-function: step-end; }
+    37.86%    { transform: translateX(120.8px); visibility: visible; animation-timing-function: steps(9, end); }
+    40.71%   { transform: translateX(2px);             visibility: visible; }
+    42.76%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw4 {
-    0%, 59.9% { visibility: hidden; transform: translateX(2px); }
-    60%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
-    67%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
-    73%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    77%   { transform: translateX(2px);             visibility: visible; }
-    79.9%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%, 42.76% { visibility: hidden; transform: translateX(2px); }
+    42.86%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
+    47.86%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
+    52.15%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
+    55%   { transform: translateX(2px);             visibility: visible; }
+    57.04%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw5 {
-    0%, 79.9% { visibility: hidden; transform: translateX(2px); }
-    80%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
-    87%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
-    93%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    97%   { transform: translateX(2px);             visibility: visible; }
+    0%, 57.04% { visibility: hidden; transform: translateX(2px); }
+    57.14%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(18, end); }
+    62.14%     { transform: translateX(239.6px); visibility: visible; animation-timing-function: step-end; }
+    66.43%    { transform: translateX(239.6px); visibility: visible; animation-timing-function: steps(18, end); }
+    69.28%   { transform: translateX(2px);             visibility: visible; }
+    71.33%, 100% { visibility: hidden; transform: translateX(2px); }
+  }
+
+  @keyframes cw6 {
+    0%, 71.33% { visibility: hidden; transform: translateX(2px); }
+    71.43%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
+    76.43%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
+    80.72%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
+    83.57%   { transform: translateX(2px);             visibility: visible; }
+    85.61%, 100% { visibility: hidden; transform: translateX(2px); }
+  }
+
+  @keyframes cw7 {
+    0%, 85.61% { visibility: hidden; transform: translateX(2px); }
+    85.71%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
+    90.71%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
+    95%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
+    97.85%   { transform: translateX(2px);             visibility: visible; }
     100% { visibility: visible; transform: translateX(2px); }
   }
 
@@ -117,25 +157,31 @@
 </style>
 
 <defs>
-  <clipPath id="cp1"><rect class="cr1" x="274.6" y="0" width="0" height="54"/></clipPath>
-  <clipPath id="cp2"><rect class="cr2" x="254.8" y="0" width="0" height="54"/></clipPath>
-  <clipPath id="cp3"><rect class="cr3" x="248.2" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp1"><rect class="cr1" x="307.6" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp2"><rect class="cr2" x="340.6" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp3"><rect class="cr3" x="340.6" y="0" width="0" height="54"/></clipPath>
   <clipPath id="cp4"><rect class="cr4" x="248.2" y="0" width="0" height="54"/></clipPath>
-  <clipPath id="cp5"><rect class="cr5" x="248.2" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp5"><rect class="cr5" x="281.2" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp6"><rect class="cr6" x="248.2" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp7"><rect class="cr7" x="248.2" y="0" width="0" height="54"/></clipPath>
 </defs>
 
 <!-- Text lines -->
-<text class="t" clip-path="url(#cp1)" x="274.6" y="34" textLength="250.8" lengthAdjust="spacingAndGlyphs">.NET &amp; C# Developer</text>
-<text class="t" clip-path="url(#cp2)" x="254.8" y="34" textLength="290.4" lengthAdjust="spacingAndGlyphs">ASP.NET Core · Node.js</text>
-<text class="t" clip-path="url(#cp3)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">HTML · CSS · JavaScript</text>
-<text class="t" clip-path="url(#cp4)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">AI-Assisted Engineering</text>
-<text class="t" clip-path="url(#cp5)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">Spec-Driven Development</text>
+<text class="t" clip-path="url(#cp1)" x="307.6" y="34" textLength="184.8" lengthAdjust="spacingAndGlyphs">.NET · Node.js</text>
+<text class="t" clip-path="url(#cp2)" x="340.6" y="34" textLength="118.8" lengthAdjust="spacingAndGlyphs">AWS · SAM</text>
+<text class="t" clip-path="url(#cp3)" x="340.6" y="34" textLength="118.8" lengthAdjust="spacingAndGlyphs">Terraform</text>
+<text class="t" clip-path="url(#cp4)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">HTML · CSS · JavaScript</text>
+<text class="t" clip-path="url(#cp5)" x="281.2" y="34" textLength="237.6" lengthAdjust="spacingAndGlyphs">React · TypeScript</text>
+<text class="t" clip-path="url(#cp6)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">AI-Assisted Engineering</text>
+<text class="t" clip-path="url(#cp7)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">Spec-Driven Development</text>
 
 <!-- Cursors -->
-<g class="cw1"><rect class="cur" x="274.6" y="16" width="3.5" height="22"/></g>
-<g class="cw2"><rect class="cur" x="254.8" y="16" width="3.5" height="22"/></g>
-<g class="cw3"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
+<g class="cw1"><rect class="cur" x="307.6" y="16" width="3.5" height="22"/></g>
+<g class="cw2"><rect class="cur" x="340.6" y="16" width="3.5" height="22"/></g>
+<g class="cw3"><rect class="cur" x="340.6" y="16" width="3.5" height="22"/></g>
 <g class="cw4"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
-<g class="cw5"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
+<g class="cw5"><rect class="cur" x="281.2" y="16" width="3.5" height="22"/></g>
+<g class="cw6"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
+<g class="cw7"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
 
 </svg>
