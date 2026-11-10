@@ -75,8 +75,8 @@
 
     "show": {
       "commits":   true,
-      "prs":       false,
-      "issues":    false,
+      "prs":       true,
+      "issues":    true,
       "stars":     true,
       "repos":     true,
       "followers": true
