@@ -14,11 +14,11 @@
   .cr5 { animation: cl5 24s infinite; }
   .cr6 { animation: cl6 24s infinite; }
 
-  /* Line 1: AWS · Serverless — 16 chars — 211.2px */
+  /* Line 1: AWS · Serverless • Cloud Infrastructure — 39 chars — 514.8px */
   @keyframes cl1 {
-    0%        { width: 0;       animation-timing-function: steps(16, end); }
-    5.83%      { width: 211.2px; animation-timing-function: step-end; }
-    10.83%     { width: 211.2px; animation-timing-function: steps(16, end); }
+    0%        { width: 0;       animation-timing-function: steps(39, end); }
+    5.83%      { width: 514.8px; animation-timing-function: step-end; }
+    10.83%     { width: 514.8px; animation-timing-function: steps(39, end); }
     14.17%, 100%  { width: 0; }
   }
 
@@ -76,9 +76,9 @@
   .cw6 { animation: cw6 24s infinite; }
 
   @keyframes cw1 {
-    0%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(16, end); }
-    5.83%     { transform: translateX(213.2px); visibility: visible; animation-timing-function: step-end; }
-    10.83%    { transform: translateX(213.2px); visibility: visible; animation-timing-function: steps(16, end); }
+    0%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(39, end); }
+    5.83%     { transform: translateX(516.8px); visibility: visible; animation-timing-function: step-end; }
+    10.83%    { transform: translateX(516.8px); visibility: visible; animation-timing-function: steps(39, end); }
     14.17%   { transform: translateX(2px);             visibility: visible; }
     16.57%, 100% { visibility: hidden; transform: translateX(2px); }
   }
@@ -137,7 +137,7 @@
 </style>
 
 <defs>
-  <clipPath id="cp1"><rect class="cr1" x="294.4" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp1"><rect class="cr1" x="142.6" y="0" width="0" height="54"/></clipPath>
   <clipPath id="cp2"><rect class="cr2" x="301" y="0" width="0" height="54"/></clipPath>
   <clipPath id="cp3"><rect class="cr3" x="228.4" y="0" width="0" height="54"/></clipPath>
   <clipPath id="cp4"><rect class="cr4" x="281.2" y="0" width="0" height="54"/></clipPath>
@@ -146,7 +146,7 @@
 </defs>
 
 <!-- Text lines -->
-<text class="t" clip-path="url(#cp1)" x="294.4" y="34" textLength="211.2" lengthAdjust="spacingAndGlyphs">AWS · Serverless</text>
+<text class="t" clip-path="url(#cp1)" x="142.6" y="34" textLength="514.8" lengthAdjust="spacingAndGlyphs">AWS · Serverless • Cloud Infrastructure</text>
 <text class="t" clip-path="url(#cp2)" x="301" y="34" textLength="198" lengthAdjust="spacingAndGlyphs">SAM · Terraform</text>
 <text class="t" clip-path="url(#cp3)" x="228.4" y="34" textLength="343.2" lengthAdjust="spacingAndGlyphs">.NET · Node.js · Rust · Go</text>
 <text class="t" clip-path="url(#cp4)" x="281.2" y="34" textLength="237.6" lengthAdjust="spacingAndGlyphs">React · TypeScript</text>
@@ -154,7 +154,7 @@
 <text class="t" clip-path="url(#cp6)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">Spec-Driven Development</text>
 
 <!-- Cursors -->
-<g class="cw1"><rect class="cur" x="294.4" y="16" width="3.5" height="22"/></g>
+<g class="cw1"><rect class="cur" x="142.6" y="16" width="3.5" height="22"/></g>
 <g class="cw2"><rect class="cur" x="301" y="16" width="3.5" height="22"/></g>
 <g class="cw3"><rect class="cur" x="228.4" y="16" width="3.5" height="22"/></g>
 <g class="cw4"><rect class="cur" x="281.2" y="16" width="3.5" height="22"/></g>
