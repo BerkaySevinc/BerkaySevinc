@@ -33,12 +33,11 @@
     // null or [] = fetch from GitHub profile (bio, company, location, blog)
 
     "lines": [
-      "AWS · Serverless • Cloud Infrastructure",
-      "SAM · Terraform",
+      "AWS · Cloud Infrastructure · Serverless",
+      "IaC · Terraform · AWS SAM",
       ".NET · Node.js · Rust · Go",
       "React · TypeScript",
-      "AI-Assisted Engineering",
-      "Spec-Driven Development"
+      "Agentic Workflows · Spec-Driven Development"
     ]
   },
 
