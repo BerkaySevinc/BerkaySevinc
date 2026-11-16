@@ -7,124 +7,104 @@
   }
   @media (prefers-color-scheme: dark)  { .t, .cur { fill: #a78bfa; } }
   @media (prefers-color-scheme: light) { .t, .cur { fill: #a78bfa; } }
-  .cr1 { animation: cl1 24s infinite; }
-  .cr2 { animation: cl2 24s infinite; }
-  .cr3 { animation: cl3 24s infinite; }
-  .cr4 { animation: cl4 24s infinite; }
-  .cr5 { animation: cl5 24s infinite; }
-  .cr6 { animation: cl6 24s infinite; }
+  .cr1 { animation: cl1 20s infinite; }
+  .cr2 { animation: cl2 20s infinite; }
+  .cr3 { animation: cl3 20s infinite; }
+  .cr4 { animation: cl4 20s infinite; }
+  .cr5 { animation: cl5 20s infinite; }
 
-  /* Line 1: AWS · Serverless • Cloud Infrastructure — 39 chars — 514.8px */
+  /* Line 1: AWS · Cloud Infrastructure · Serverless — 39 chars — 514.8px */
   @keyframes cl1 {
     0%        { width: 0;       animation-timing-function: steps(39, end); }
-    5.83%      { width: 514.8px; animation-timing-function: step-end; }
-    10.83%     { width: 514.8px; animation-timing-function: steps(39, end); }
-    14.17%, 100%  { width: 0; }
+    7%      { width: 514.8px; animation-timing-function: step-end; }
+    13%     { width: 514.8px; animation-timing-function: steps(39, end); }
+    17%, 100%  { width: 0; }
   }
 
-  /* Line 2: SAM · Terraform — 15 chars — 198px */
+  /* Line 2: IaC · Terraform · AWS SAM — 25 chars — 330px */
   @keyframes cl2 {
-    0%, 16.57%  { width: 0; }
-    16.67%        { width: 0;       animation-timing-function: steps(15, end); }
-    22.5%      { width: 198px; animation-timing-function: step-end; }
-    27.5%     { width: 198px; animation-timing-function: steps(15, end); }
-    30.84%, 100%  { width: 0; }
+    0%, 19.9%  { width: 0; }
+    20%        { width: 0;       animation-timing-function: steps(25, end); }
+    27%      { width: 330px; animation-timing-function: step-end; }
+    33%     { width: 330px; animation-timing-function: steps(25, end); }
+    37%, 100%  { width: 0; }
   }
 
   /* Line 3: .NET · Node.js · Rust · Go — 26 chars — 343.2px */
   @keyframes cl3 {
-    0%, 33.23%  { width: 0; }
-    33.33%        { width: 0;       animation-timing-function: steps(26, end); }
-    39.16%      { width: 343.2px; animation-timing-function: step-end; }
-    44.16%     { width: 343.2px; animation-timing-function: steps(26, end); }
-    47.5%, 100%  { width: 0; }
+    0%, 39.9%  { width: 0; }
+    40%        { width: 0;       animation-timing-function: steps(26, end); }
+    47%      { width: 343.2px; animation-timing-function: step-end; }
+    53%     { width: 343.2px; animation-timing-function: steps(26, end); }
+    57%, 100%  { width: 0; }
   }
 
   /* Line 4: React · TypeScript — 18 chars — 237.6px */
   @keyframes cl4 {
-    0%, 49.9%  { width: 0; }
-    50%        { width: 0;       animation-timing-function: steps(18, end); }
-    55.83%      { width: 237.6px; animation-timing-function: step-end; }
-    60.83%     { width: 237.6px; animation-timing-function: steps(18, end); }
-    64.17%, 100%  { width: 0; }
+    0%, 59.9%  { width: 0; }
+    60%        { width: 0;       animation-timing-function: steps(18, end); }
+    67%      { width: 237.6px; animation-timing-function: step-end; }
+    73%     { width: 237.6px; animation-timing-function: steps(18, end); }
+    77%, 100%  { width: 0; }
   }
 
-  /* Line 5: AI-Assisted Engineering — 23 chars — 303.6px */
+  /* Line 5: Agentic Workflows · Spec-Driven Development — 43 chars — 567.6px */
   @keyframes cl5 {
-    0%, 66.57%  { width: 0; }
-    66.67%        { width: 0;       animation-timing-function: steps(23, end); }
-    72.5%      { width: 303.6px; animation-timing-function: step-end; }
-    77.5%     { width: 303.6px; animation-timing-function: steps(23, end); }
-    80.84%, 100%  { width: 0; }
-  }
-
-  /* Line 6: Spec-Driven Development — 23 chars — 303.6px */
-  @keyframes cl6 {
-    0%, 83.23%  { width: 0; }
-    83.33%        { width: 0;       animation-timing-function: steps(23, end); }
-    89.16%      { width: 303.6px; animation-timing-function: step-end; }
-    94.16%     { width: 303.6px; animation-timing-function: steps(23, end); }
-    97.5%, 100%  { width: 0; }
+    0%, 79.9%  { width: 0; }
+    80%        { width: 0;       animation-timing-function: steps(43, end); }
+    87%      { width: 567.6px; animation-timing-function: step-end; }
+    93%     { width: 567.6px; animation-timing-function: steps(43, end); }
+    97%, 100%  { width: 0; }
   }
 
   /* Cursor wrappers — control position and visibility */
-  .cw1 { animation: cw1 24s infinite; }
-  .cw2 { animation: cw2 24s infinite; }
-  .cw3 { animation: cw3 24s infinite; }
-  .cw4 { animation: cw4 24s infinite; }
-  .cw5 { animation: cw5 24s infinite; }
-  .cw6 { animation: cw6 24s infinite; }
+  .cw1 { animation: cw1 20s infinite; }
+  .cw2 { animation: cw2 20s infinite; }
+  .cw3 { animation: cw3 20s infinite; }
+  .cw4 { animation: cw4 20s infinite; }
+  .cw5 { animation: cw5 20s infinite; }
 
   @keyframes cw1 {
     0%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(39, end); }
-    5.83%     { transform: translateX(516.8px); visibility: visible; animation-timing-function: step-end; }
-    10.83%    { transform: translateX(516.8px); visibility: visible; animation-timing-function: steps(39, end); }
-    14.17%   { transform: translateX(2px);             visibility: visible; }
-    16.57%, 100% { visibility: hidden; transform: translateX(2px); }
+    7%     { transform: translateX(516.8px); visibility: visible; animation-timing-function: step-end; }
+    13%    { transform: translateX(516.8px); visibility: visible; animation-timing-function: steps(39, end); }
+    17%   { transform: translateX(2px);             visibility: visible; }
+    19.9%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw2 {
-    0%, 16.57% { visibility: hidden; transform: translateX(2px); }
-    16.67%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(15, end); }
-    22.5%     { transform: translateX(200px); visibility: visible; animation-timing-function: step-end; }
-    27.5%    { transform: translateX(200px); visibility: visible; animation-timing-function: steps(15, end); }
-    30.84%   { transform: translateX(2px);             visibility: visible; }
-    33.23%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%, 19.9% { visibility: hidden; transform: translateX(2px); }
+    20%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(25, end); }
+    27%     { transform: translateX(332px); visibility: visible; animation-timing-function: step-end; }
+    33%    { transform: translateX(332px); visibility: visible; animation-timing-function: steps(25, end); }
+    37%   { transform: translateX(2px);             visibility: visible; }
+    39.9%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw3 {
-    0%, 33.23% { visibility: hidden; transform: translateX(2px); }
-    33.33%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(26, end); }
-    39.16%     { transform: translateX(345.2px); visibility: visible; animation-timing-function: step-end; }
-    44.16%    { transform: translateX(345.2px); visibility: visible; animation-timing-function: steps(26, end); }
-    47.5%   { transform: translateX(2px);             visibility: visible; }
-    49.9%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%, 39.9% { visibility: hidden; transform: translateX(2px); }
+    40%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(26, end); }
+    47%     { transform: translateX(345.2px); visibility: visible; animation-timing-function: step-end; }
+    53%    { transform: translateX(345.2px); visibility: visible; animation-timing-function: steps(26, end); }
+    57%   { transform: translateX(2px);             visibility: visible; }
+    59.9%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw4 {
-    0%, 49.9% { visibility: hidden; transform: translateX(2px); }
-    50%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(18, end); }
-    55.83%     { transform: translateX(239.6px); visibility: visible; animation-timing-function: step-end; }
-    60.83%    { transform: translateX(239.6px); visibility: visible; animation-timing-function: steps(18, end); }
-    64.17%   { transform: translateX(2px);             visibility: visible; }
-    66.57%, 100% { visibility: hidden; transform: translateX(2px); }
+    0%, 59.9% { visibility: hidden; transform: translateX(2px); }
+    60%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(18, end); }
+    67%     { transform: translateX(239.6px); visibility: visible; animation-timing-function: step-end; }
+    73%    { transform: translateX(239.6px); visibility: visible; animation-timing-function: steps(18, end); }
+    77%   { transform: translateX(2px);             visibility: visible; }
+    79.9%, 100% { visibility: hidden; transform: translateX(2px); }
   }
 
   @keyframes cw5 {
-    0%, 66.57% { visibility: hidden; transform: translateX(2px); }
-    66.67%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
-    72.5%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
-    77.5%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    80.84%   { transform: translateX(2px);             visibility: visible; }
-    83.23%, 100% { visibility: hidden; transform: translateX(2px); }
-  }
-
-  @keyframes cw6 {
-    0%, 83.23% { visibility: hidden; transform: translateX(2px); }
-    83.33%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(23, end); }
-    89.16%     { transform: translateX(305.6px); visibility: visible; animation-timing-function: step-end; }
-    94.16%    { transform: translateX(305.6px); visibility: visible; animation-timing-function: steps(23, end); }
-    97.5%   { transform: translateX(2px);             visibility: visible; }
+    0%, 79.9% { visibility: hidden; transform: translateX(2px); }
+    80%       { transform: translateX(2px);             visibility: visible; animation-timing-function: steps(43, end); }
+    87%     { transform: translateX(569.6px); visibility: visible; animation-timing-function: step-end; }
+    93%    { transform: translateX(569.6px); visibility: visible; animation-timing-function: steps(43, end); }
+    97%   { transform: translateX(2px);             visibility: visible; }
     100% { visibility: visible; transform: translateX(2px); }
   }
 
@@ -138,27 +118,24 @@
 
 <defs>
   <clipPath id="cp1"><rect class="cr1" x="142.6" y="0" width="0" height="54"/></clipPath>
-  <clipPath id="cp2"><rect class="cr2" x="301" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp2"><rect class="cr2" x="235" y="0" width="0" height="54"/></clipPath>
   <clipPath id="cp3"><rect class="cr3" x="228.4" y="0" width="0" height="54"/></clipPath>
   <clipPath id="cp4"><rect class="cr4" x="281.2" y="0" width="0" height="54"/></clipPath>
-  <clipPath id="cp5"><rect class="cr5" x="248.2" y="0" width="0" height="54"/></clipPath>
-  <clipPath id="cp6"><rect class="cr6" x="248.2" y="0" width="0" height="54"/></clipPath>
+  <clipPath id="cp5"><rect class="cr5" x="116.2" y="0" width="0" height="54"/></clipPath>
 </defs>
 
 <!-- Text lines -->
-<text class="t" clip-path="url(#cp1)" x="142.6" y="34" textLength="514.8" lengthAdjust="spacingAndGlyphs">AWS · Serverless • Cloud Infrastructure</text>
-<text class="t" clip-path="url(#cp2)" x="301" y="34" textLength="198" lengthAdjust="spacingAndGlyphs">SAM · Terraform</text>
+<text class="t" clip-path="url(#cp1)" x="142.6" y="34" textLength="514.8" lengthAdjust="spacingAndGlyphs">AWS · Cloud Infrastructure · Serverless</text>
+<text class="t" clip-path="url(#cp2)" x="235" y="34" textLength="330" lengthAdjust="spacingAndGlyphs">IaC · Terraform · AWS SAM</text>
 <text class="t" clip-path="url(#cp3)" x="228.4" y="34" textLength="343.2" lengthAdjust="spacingAndGlyphs">.NET · Node.js · Rust · Go</text>
 <text class="t" clip-path="url(#cp4)" x="281.2" y="34" textLength="237.6" lengthAdjust="spacingAndGlyphs">React · TypeScript</text>
-<text class="t" clip-path="url(#cp5)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">AI-Assisted Engineering</text>
-<text class="t" clip-path="url(#cp6)" x="248.2" y="34" textLength="303.6" lengthAdjust="spacingAndGlyphs">Spec-Driven Development</text>
+<text class="t" clip-path="url(#cp5)" x="116.2" y="34" textLength="567.6" lengthAdjust="spacingAndGlyphs">Agentic Workflows · Spec-Driven Development</text>
 
 <!-- Cursors -->
 <g class="cw1"><rect class="cur" x="142.6" y="16" width="3.5" height="22"/></g>
-<g class="cw2"><rect class="cur" x="301" y="16" width="3.5" height="22"/></g>
+<g class="cw2"><rect class="cur" x="235" y="16" width="3.5" height="22"/></g>
 <g class="cw3"><rect class="cur" x="228.4" y="16" width="3.5" height="22"/></g>
 <g class="cw4"><rect class="cur" x="281.2" y="16" width="3.5" height="22"/></g>
-<g class="cw5"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
-<g class="cw6"><rect class="cur" x="248.2" y="16" width="3.5" height="22"/></g>
+<g class="cw5"><rect class="cur" x="116.2" y="16" width="3.5" height="22"/></g>
 
 </svg>
