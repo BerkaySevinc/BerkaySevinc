@@ -40,7 +40,7 @@
   <text x="600.0" y="93"  text-anchor="middle" class="val">22</text>
   <text x="600.0" y="118" text-anchor="middle" class="lbl">Repos</text>
   <line x1="667" y1="48" x2="667" y2="136" class="div"/>
-  <text x="733.3" y="93"  text-anchor="middle" class="val">42</text>
+  <text x="733.3" y="93"  text-anchor="middle" class="val">43</text>
   <text x="733.3" y="118" text-anchor="middle" class="lbl">Followers</text>
 
 </svg>
